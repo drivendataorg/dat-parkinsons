@@ -1,0 +1,10 @@
+cols ['uid', 'is_pathologic'] rows 524 fmt rows 524
+uid order == format: True dupes: 0 set eq: True
+min/max 0.007809664122760296 0.9891796112060547 exact0/1 0 distinct 475
+idx cols ['uid', 'public'] [{'uid': 'pht0hl9x', 'public': 'False'}, {'uid': 'pseimvih', 'public': 'True'}]
+overall 0.27321283982478545
+public False 262 0.314718
+public True 262 0.231707
+max decimals 18
+repeated values: [(0.007809664122760296, 2), (0.9891796112060547, 49)]
+calibrated cap bounds: hi 0.9891796436932302 lo 0.0078096622356847185

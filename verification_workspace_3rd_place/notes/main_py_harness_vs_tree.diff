@@ -1,0 +1,47 @@
+--- verification_workspace_3rd_place/extracted/harness_zip/main.py	2026-09-05 02:55:28
++++ 3rd Place/inference/main.py	2026-09-29 11:30:13
+@@ -82,10 +82,26 @@
+ def main():
+     fmt = pd.read_csv(f"{DATA}/submission_format.csv")
+     paths = [f"{DATA}/niftis/{u}.nii.gz" for u in fmt["uid"]]
+-    models = [torch.jit.load(f, map_location=device).eval()
+-              for f in sorted(glob.glob(f"{ASSETS}/*.ts.pt")) if not f.endswith("ellipse.ts.pt")]
++    mfiles = [f for f in sorted(glob.glob(f"{ASSETS}/*.ts.pt"))
++              if not f.endswith(("ellipse.ts.pt", "ex_shared.ts.pt"))]
++    models = [torch.jit.load(f, map_location=device).eval() for f in mfiles]
+     if device == "cpu":
+         models = [m.float() for m in models]
++    # MIXED ROSTER (2026-09-11): ex_* members (e2c8x, plain) take the 2D PROJECTED anchor (union over
++    # S-I, transforms.project_mask); fu_* members (attnres) take the 3D slabbed anchor. Same ellipse,
++    # same masks -- only the reduction differs, exactly as at training time (train.py:99).
++    is_ex = [os.path.basename(f).startswith("ex_") for f in mfiles]
++    # e2c8x members ship as ONE shared traced graph (kernel-basis constants baked, steerable weights
++    # live) + one small f32 state_dict per fold-model: the graph is re-loaded per member (page-cache
++    # hot) and the member's weights are loaded into it. Verified equal to the eager models on real
++    # boxes for all 50 fold-checkpoints (ex_shared_pack.py).
++    if os.path.exists(f"{ASSETS}/ex_shared.ts.pt"):
++        for sf in sorted(glob.glob(f"{ASSETS}/ex_*.sd.pt")):
++            m = torch.jit.load(f"{ASSETS}/ex_shared.ts.pt", map_location=device).eval()
++            if device == "cpu":
++                m = m.float()
++            m.load_state_dict(torch.load(sf, map_location=device))
++            models.append(m); is_ex.append(True)
+     dtypes = [next(m.parameters()).dtype for m in models]     # mixed f16/f32: effb0 must be f32
+     cal = json.load(open(f"{ASSETS}/calibration.json"))
+     a, b = float(cal["a"]), float(cal["b"])
+@@ -130,10 +146,12 @@
+         th = CZ.thetas(xb[:,0].cpu().numpy(), c[:,0].cpu().numpy(), c[:,1].cpu().numpy())
+         xc, mc = CZ.canonize(xb.to(device).float(), m3, th.to(device))
+         an3 = CZ.with_slabs(mc)
++        an2 = mc.amax(-1)                                     # (B,1,LR,AP) for the plain ex_* members
+         zs = []
+-        for m, dt in zip(models, dtypes):
+-            z1 = m(xc.to(dt), an3.to(dt)).float()
+-            z2 = m(torch.flip(xc, dims=[2]).to(dt), torch.flip(an3, dims=[2]).to(dt)).float()
++        for m, dt, ex in zip(models, dtypes, is_ex):
++            anc = an2 if ex else an3
++            z1 = m(xc.to(dt), anc.to(dt)).float()
++            z2 = m(torch.flip(xc, dims=[2]).to(dt), torch.flip(anc, dims=[2]).to(dt)).float()
+             z = (z1 + z2) / 2
+             if CAP: z = z.clamp(-CAP, CAP)
+             zs.append(z)
