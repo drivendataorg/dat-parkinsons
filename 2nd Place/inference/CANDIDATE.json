@@ -1,0 +1,127 @@
+{
+  "name": "v17-local-candidate",
+  "status": "HELD LOCALLY: validation improved; public leader-beating performance is unproven",
+  "new_component": "Spatial uptake mixtures plus four nested quantitative priors",
+  "raw_records_in_deployment": false,
+  "persistence_checks": {
+    "raw": {
+      "max_probability_difference": 0.0,
+      "bytes": 229985568,
+      "sha256": "167455ac379843f8e810419dea09564c4672d52eecc5e5e8e49c4ce887ee5fab",
+      "raw_records_removed": true
+    },
+    "log": {
+      "max_probability_difference": 0.0,
+      "bytes": 226742860,
+      "sha256": "af158889b24828d17bc5503625fffb9b669da91588c3040bb5f63bd8b448570c",
+      "raw_records_removed": true
+    }
+  },
+  "native_oof_checks": {
+    "cached": {
+      "logloss": 0.12663745838325818,
+      "auroc": 0.9898642533936651
+    },
+    "native": {
+      "logloss": 0.12665348302314763,
+      "auroc": 0.9900452488687783
+    },
+    "mean_probability_difference": 0.00040590445161797106,
+    "max_probability_difference": 0.008838444948196411,
+    "native_minus_cached_logloss": 1.6024639889450354e-05
+  },
+  "mixture_runtime_parity": {
+    "rows": 1362,
+    "seconds": 21,
+    "max_absolute_difference": 3.552713678800501e-15,
+    "max_standardized_difference": 3.2676988174225513e-15,
+    "mean_standardized_difference": 1.522919196631496e-16,
+    "finite": true
+  },
+  "native_checks": {
+    "rows": 150,
+    "seconds": 560,
+    "format_matches": true,
+    "finite": true,
+    "bounded": true,
+    "tabular_cache_native_mean_difference": 0.00041065739293117076,
+    "tabular_cache_native_max_difference": 0.01630707085132599,
+    "mixture_max_difference": 3.552713678800501e-15,
+    "selected_shape_max_difference": 2.609594975666596e-07,
+    "order_independence_max_difference": 0.0,
+    "single_independence_max_difference": 0.0
+  },
+  "validation": {
+    "original": {
+      "v16_T1.2": {
+        "logloss": 0.21122801416003575,
+        "auroc": 0.9717798021353707
+      },
+      "candidate_T1.2": {
+        "logloss": 0.2054002985825351,
+        "auroc": 0.9735070362751819
+      },
+      "v16_T1": {
+        "logloss": 0.21192986143488854,
+        "auroc": 0.9718472807218032
+      },
+      "candidate_T1": {
+        "logloss": 0.20574394676234337,
+        "auroc": 0.9731108716709658
+      },
+      "ensemble_surrogates": {
+        "v16": {
+          "logloss": 0.20680518412762686,
+          "auroc": 0.974318956040966
+        },
+        "candidate_same_weight": {
+          "logloss": 0.203941126637586,
+          "auroc": 0.975098224877831
+        },
+        "candidate_weight55": {
+          "logloss": 0.20148085690705225,
+          "auroc": 0.9750721041346959
+        }
+      },
+      "delta_logloss_T1.2": -0.005827715577500642
+    },
+    "family": {
+      "v16_T1.2": {
+        "logloss": 0.23722046510846787,
+        "auroc": 0.9636203349985307
+      },
+      "candidate_T1.2": {
+        "logloss": 0.22300549808050624,
+        "auroc": 0.967973792187721
+      },
+      "v16_T1": {
+        "logloss": 0.24168422697701142,
+        "auroc": 0.9636780183062875
+      },
+      "candidate_T1": {
+        "logloss": 0.2282842214869984,
+        "auroc": 0.9680401824098562
+      },
+      "delta_logloss_T1.2": -0.014214967027961628
+    },
+    "fresh": {
+      "v16_T1.2": {
+        "logloss": 0.22083045010800573,
+        "auroc": 0.9687791817677213
+      },
+      "candidate_T1.2": {
+        "logloss": 0.21631580795636435,
+        "auroc": 0.9695965433549918
+      },
+      "v16_T1": {
+        "logloss": 0.2247528025356195,
+        "auroc": 0.9688444836255591
+      },
+      "candidate_T1": {
+        "logloss": 0.22084777565801553,
+        "auroc": 0.9696727288558027
+      },
+      "delta_logloss_T1.2": -0.004514642151641379
+    }
+  }
+}

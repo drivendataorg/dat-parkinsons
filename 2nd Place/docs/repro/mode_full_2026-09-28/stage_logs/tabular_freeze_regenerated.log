@@ -1,0 +1,2 @@
+raw frozen {"max_probability_difference": 0.0, "bytes": 229984736, "sha256": "1a0e793babc8489b5287e2916e902ec9c70853c351c56b5f46953b6ef6febb9b", "raw_records_removed": true, "rows": 1362, "columns": 72, "ensemble_order": ["none", "power"], "pythonhashseed": "1"} seconds 77
+log frozen {"max_probability_difference": 0.0, "bytes": 226749680, "sha256": "5e9ae3442ed1742c0a04a7ff1ff5bb071fefae313075eef2749e142ec767418d", "raw_records_removed": true, "rows": 1148, "columns": 72, "ensemble_order": ["none", "power"], "pythonhashseed": "1"} seconds 152

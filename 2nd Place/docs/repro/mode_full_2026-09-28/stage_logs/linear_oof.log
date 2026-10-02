@@ -1,0 +1,4 @@
+lin   ncols=235 OOF ll 0.2322 auc 0.9650
+lin4  ncols=94 OOF ll 0.2378 auc 0.9634
+wrote outputs/oof_feat3_m2fnh.csv
+[03_linear] linear_oof wall time 3 s

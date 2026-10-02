@@ -1,0 +1,8 @@
+[Parallel(n_jobs=3)]: Using backend LokyBackend with 3 concurrent workers.
+<repo>/.venv-train/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py:782: UserWarning: A worker stopped while some jobs were given to the executor. This can be caused by a too short worker timeout or by a memory leak.
+  warnings.warn(
+[Parallel(n_jobs=3)]: Done 182 tasks      | elapsed:   12.3s
+[Parallel(n_jobs=3)]: Done 782 tasks      | elapsed:  2.9min
+[Parallel(n_jobs=3)]: Done 1362 out of 1362 | elapsed:  6.3min finished
+[cache3] 1362 scans in 376s | failures: 0
+[cache3] wrote crops_v3.npz, features_v4.csv (240 feats), qc_v3.csv

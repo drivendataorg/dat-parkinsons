@@ -1,0 +1,6 @@
+  mil48a   ll 0.2643 auc 0.9564
+  mil48b   ll 0.2640 auc 0.9570
+  m31000   ll 0.2639 auc 0.9566
+  m33000   ll 0.2667 auc 0.9556
+  mil48y   ll 0.2611 auc 0.9579   <- mean of 4 runs
+[avg] wrote oof_mil48y.csv

@@ -1,0 +1,307 @@
+
+================ [train_all:full] 00 verify staged data (0 s elapsed) ================
+[00_stage] niftis already staged (1362 files), not unzipping
+[00_stage] labels.csv already staged
+[00_stage] scans: 1362  label rows: 1362  labelled uids without a scan: 0
+[00_stage] labels.csv sha256 1660731b5d51b1f9...
+[00_stage] OK
+
+================ [train_all:full] 01 folds (0 s elapsed) ================
+folds written: <repo>/outputs/folds.csv
+      size   mean
+fold             
+0      273  0.549
+1      273  0.549
+2      272  0.548
+3      272  0.548
+4      272  0.548
+
+================ [train_all:full] 02 registered feature tables (1 s elapsed) ================
+<repo>/.venv-train/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py:782: UserWarning: A worker stopped while some jobs were given to the executor. This can be caused by a too short worker timeout or by a memory leak.
+  warnings.warn(
+[regfeat32] preprocessed 1362 at float32 (0 failed) in 365s
+[regfeat32] registered | mean ncc 0.7889 | rejected 2 | 118s
+[regfeat32] wrote features_v13_m2.csv (240 feats) and features_v4_m2.csv (98 feats)
+[02_features] make_regfeat32 wall time 493 s
+[filter] m2 -> m2f: rich 242 -> 241 cols (dropped ['hole_ml']), narrow 100 -> 100 cols (dropped [])
+[filter] features_v13_m2fnh.csv shape (1362, 240)
+[filter] features_v4_m2fnh.csv shape (1362, 99)
+[02_features] done
+
+================ [train_all:full] 03 linear members lin / lin4 (495 s elapsed) ================
+lin   ncols=235 OOF ll 0.2322 auc 0.9650
+lin4  ncols=94 OOF ll 0.2378 auc 0.9634
+wrote outputs/oof_feat3_m2fnh.csv
+[03_linear] linear_oof wall time 3 s
+  lin   ll 0.2322  auc 0.9650
+  lin4  ll 0.2378  auc 0.9634
+  gbm   ll 0.2690  auc 0.9542
+  mlp   ll 0.2371  auc 0.9622
+[final3] wrote oof_feat3.csv
+[final3] exported: L1 kept 48/235 rich features, 40/94 narrow
+[03_linear] train_final3 wall time 16 s
+submission_src/assets/linear_lin.json 235 features, no head_ml/hole_ml, 48 non-zero coefficients
+submission_src/assets/linear_lin4.json 94 features, no head_ml/hole_ml, 40 non-zero coefficients
+[03_linear] done
+
+================ [train_all:full] 04 CNN input caches (514 s elapsed) ================
+[04_caches] building crops_v3_b.npz with DAT_MASK_V2=0 OMP_NUM_THREADS=2 (Sun Sep 27 23:50:50 EDT 2026)
+[cache3] 1362 scans in 376s | failures: 0
+[cache3] wrote crops_v3.npz, features_v4.csv (240 feats), qc_v3.csv
+[04_caches] crops_v3_b.npz done in 394 s (log: outputs/logs/cache3_b.log)
+[04_caches] building crops_v3_f2.npz with DAT_MASK_V2=1 DAT_FRAME_V2=1 OMP_NUM_THREADS=2 (Sun Sep 27 23:57:24 EDT 2026)
+[cache3] 1362 scans in 378s | failures: 0
+[cache3] wrote crops_v3.npz, features_v4.csv (240 feats), qc_v3.csv
+[04_caches] crops_v3_f2.npz done in 397 s (log: outputs/logs/cache3_f2.log)
+
+================ [train_all:full] 05 3D hemisphere-MIL CNN (34 checkpoints) (1305 s elapsed) ================
+[05_cnn3d] mil48a: cnn3.py --tag mil48a --arch mil --size 48 --key aligned --crops crops_v3_b.npz --lr 1e-3 --epochs 20 --seed-base 3000  (Mon Sep 28 00:04:01 EDT 2026)
+[mil48a] fold 0: ll 0.2544 auc 0.9576  (337s)
+[mil48a] fold 1: ll 0.2471 auc 0.9611  (674s)
+[mil48a] fold 2: ll 0.2477 auc 0.9641  (1010s)
+[mil48a] fold 3: ll 0.3137 auc 0.9395  (1346s)
+[mil48a] fold 4: ll 0.2586 auc 0.9597  (1682s)
+[mil48a] OOF logloss 0.2643 auroc 0.9564 (1682s)
+[05_cnn3d] mil48a done in 1686 s
+[05_cnn3d] mil48b: cnn3.py --tag mil48b --arch mil --size 48 --key aligned --crops crops_v3_b.npz --lr 1e-3 --epochs 20 --seed-base 7000  (Mon Sep 28 00:32:07 EDT 2026)
+[mil48b] fold 0: ll 0.2496 auc 0.9594  (337s)
+[mil48b] fold 1: ll 0.2516 auc 0.9604  (672s)
+[mil48b] fold 2: ll 0.2490 auc 0.9656  (1009s)
+[mil48b] fold 3: ll 0.3232 auc 0.9362  (1345s)
+[mil48b] fold 4: ll 0.2467 auc 0.9632  (1682s)
+[mil48b] OOF logloss 0.2640 auroc 0.9570 (1682s)
+[05_cnn3d] mil48b done in 1684 s
+[05_cnn3d] mf21000: cnn3.py --tag mf21000 --arch mil --size 48 --key aligned --crops crops_v3_b.npz --lr 1e-3 --epochs 20 --seed-base 21000 --full (Mon Sep 28 01:00:11 EDT 2026)
+[mf21000] full-data model -> mf21000_full0.pt (419s)
+[05_cnn3d] mf21000 done in 422 s
+[05_cnn3d] mf23000: cnn3.py --tag mf23000 --arch mil --size 48 --key aligned --crops crops_v3_b.npz --lr 1e-3 --epochs 20 --seed-base 23000 --full (Mon Sep 28 01:07:13 EDT 2026)
+[mf23000] full-data model -> mf23000_full0.pt (417s)
+[05_cnn3d] mf23000 done in 421 s
+[05_cnn3d] mf25000: cnn3.py --tag mf25000 --arch mil --size 48 --key aligned --crops crops_v3_b.npz --lr 1e-3 --epochs 20 --seed-base 25000 --full (Mon Sep 28 01:14:14 EDT 2026)
+[mf25000] full-data model -> mf25000_full0.pt (418s)
+[05_cnn3d] mf25000 done in 421 s
+[05_cnn3d] mf27000: cnn3.py --tag mf27000 --arch mil --size 48 --key aligned --crops crops_v3_b.npz --lr 1e-3 --epochs 20 --seed-base 27000 --full (Mon Sep 28 01:21:15 EDT 2026)
+[mf27000] full-data model -> mf27000_full0.pt (418s)
+[05_cnn3d] mf27000 done in 421 s
+[05_cnn3d] m31000: cnn3.py --tag m31000 --arch mil --size 48 --key aligned --crops crops_v3_b.npz --lr 1e-3 --epochs 20 --seed-base 31000  (Mon Sep 28 01:28:16 EDT 2026)
+[m31000] fold 0: ll 0.2606 auc 0.9549  (337s)
+[m31000] fold 1: ll 0.2490 auc 0.9628  (672s)
+[m31000] fold 2: ll 0.2402 auc 0.9680  (1009s)
+[m31000] fold 3: ll 0.3297 auc 0.9351  (1345s)
+[m31000] fold 4: ll 0.2400 auc 0.9648  (1681s)
+[m31000] OOF logloss 0.2639 auroc 0.9566 (1681s)
+[05_cnn3d] m31000 done in 1684 s
+[05_cnn3d] m33000: cnn3.py --tag m33000 --arch mil --size 48 --key aligned --crops crops_v3_b.npz --lr 1e-3 --epochs 20 --seed-base 33000  (Mon Sep 28 01:56:20 EDT 2026)
+[m33000] fold 0: ll 0.2686 auc 0.9524  (337s)
+[m33000] fold 1: ll 0.2456 auc 0.9638  (672s)
+[m33000] fold 2: ll 0.2500 auc 0.9649  (1008s)
+[m33000] fold 3: ll 0.3157 auc 0.9394  (1344s)
+[m33000] fold 4: ll 0.2537 auc 0.9624  (1680s)
+[m33000] OOF logloss 0.2667 auroc 0.9556 (1680s)
+[05_cnn3d] m33000 done in 1683 s
+[05_cnn3d] m35000: cnn3.py --tag m35000 --arch mil --size 48 --key aligned --crops crops_v3_b.npz --lr 1e-3 --epochs 20 --seed-base 35000  (Mon Sep 28 02:24:23 EDT 2026)
+[m35000] fold 0: ll 0.2702 auc 0.9524  (336s)
+[m35000] fold 1: ll 0.2450 auc 0.9625  (672s)
+[m35000] fold 2: ll 0.2527 auc 0.9642  (1008s)
+[m35000] fold 3: ll 0.3060 auc 0.9441  (1344s)
+[m35000] fold 4: ll 0.2490 auc 0.9631  (1679s)
+[m35000] OOF logloss 0.2646 auroc 0.9568 (1679s)
+[05_cnn3d] m35000 done in 1683 s
+[05_cnn3d] m37000: cnn3.py --tag m37000 --arch mil --size 48 --key aligned --crops crops_v3_b.npz --lr 1e-3 --epochs 20 --seed-base 37000  (Mon Sep 28 02:52:26 EDT 2026)
+[m37000] fold 0: ll 0.2567 auc 0.9572  (337s)
+[m37000] fold 1: ll 0.2384 auc 0.9655  (673s)
+[m37000] fold 2: ll 0.2458 auc 0.9666  (1009s)
+[m37000] fold 3: ll 0.3224 auc 0.9347  (1345s)
+[m37000] fold 4: ll 0.2395 auc 0.9655  (1682s)
+[m37000] OOF logloss 0.2606 auroc 0.9576 (1682s)
+[05_cnn3d] m37000 done in 1684 s
+  mil48a   ll 0.2643 auc 0.9564
+  mil48b   ll 0.2640 auc 0.9570
+  m31000   ll 0.2639 auc 0.9566
+  m33000   ll 0.2667 auc 0.9556
+  mil48y   ll 0.2611 auc 0.9579   <- mean of 4 runs
+[avg] wrote oof_mil48y.csv
+
+================ [train_all:full] 06 2D EfficientNet members (18 checkpoints) (13096 s elapsed) ================
+[backbones] timm 1.0.28
+[backbones] efficientnet_b0.ra_in1k: repo timm/efficientnet_b0.ra_in1k revision 1b5383e5f79cc0f7fc067e372f8f26a5fa73f26a file model.safetensors size 21355344 sha256 d569899762ea9b1384ee07f4af64805cf8caa1c55f9253ebb1080dc40e87a2cd OK
+[backbones] efficientnet_b3.ra2_in1k: repo timm/efficientnet_b3.ra2_in1k revision 0366a75518620e0f2077789202073759f2d61393 file model.safetensors size 49335454 sha256 279d2a53898aa89dab43fd6bd7df9f706aea4cb9cf916223988bbcb8e5850469 OK
+[06_cnn2d] e2dmipf2: cnn2d.py --tag e2dmipf2 --crops crops_v3_f2.npz --key aligned --views mip3 --epochs 30 --lr 1e-4 --aug 1.0 --res 192 --seed-base 9000  (Mon Sep 28 03:20:35 EDT 2026)
+[e2dmipf2] fold 0: ll 0.2773 auc 0.9516  (300s)
+[e2dmipf2] fold 1: ll 0.2918 auc 0.9469  (597s)
+[e2dmipf2] fold 2: ll 0.3012 auc 0.9535  (896s)
+[e2dmipf2] fold 3: ll 0.2817 auc 0.9563  (1194s)
+[e2dmipf2] fold 4: ll 0.2809 auc 0.9562  (1491s)
+[e2dmipf2] OOF logloss 0.2866 auroc 0.9517 (1491s)
+[06_cnn2d] e2dmipf2 done in 1494 s
+[06_cnn2d] e2dmipf22: cnn2d.py --tag e2dmipf22 --crops crops_v3_f2.npz --key aligned --views mip3 --epochs 30 --lr 1e-4 --aug 1.0 --res 192 --seed-base 9100  (Mon Sep 28 03:45:29 EDT 2026)
+[e2dmipf22] fold 0: ll 0.2814 auc 0.9538  (300s)
+[e2dmipf22] fold 1: ll 0.2923 auc 0.9476  (597s)
+[e2dmipf22] fold 2: ll 0.2808 auc 0.9593  (896s)
+[e2dmipf22] fold 3: ll 0.2868 auc 0.9547  (1193s)
+[e2dmipf22] fold 4: ll 0.2905 auc 0.9530  (1490s)
+[e2dmipf22] OOF logloss 0.2864 auroc 0.9535 (1490s)
+[06_cnn2d] e2dmipf22 done in 1494 s
+[06_cnn2d] e2dmipf2: cnn2d.py --tag e2dmipf2 --crops crops_v3_f2.npz --key aligned --views mip3 --epochs 30 --lr 1e-4 --aug 1.0 --res 192 --seed-base 9000 --full (Mon Sep 28 04:10:23 EDT 2026)
+[e2dmipf2] full-data model saved (370s)
+[06_cnn2d] e2dmipf2_full done in 373 s
+[06_cnn2d] e2dmipf22: cnn2d.py --tag e2dmipf22 --crops crops_v3_f2.npz --key aligned --views mip3 --epochs 30 --lr 1e-4 --aug 1.0 --res 192 --seed-base 9100 --full (Mon Sep 28 04:16:36 EDT 2026)
+[e2dmipf22] full-data model saved (370s)
+[06_cnn2d] e2dmipf22_full done in 374 s
+[06_cnn2d] e2db3f2: cnn2d.py --tag e2db3f2 --crops crops_v3_f2.npz --key aligned --views mip3 --epochs 30 --lr 1e-4 --aug 1.0 --res 224 --backbone efficientnet_b3.ra2_in1k --seed-base 9000  (Mon Sep 28 04:22:50 EDT 2026)
+[e2db3f2] fold 0: ll 0.3137 auc 0.9425  (779s)
+[e2db3f2] fold 1: ll 0.2798 auc 0.9583  (1556s)
+[e2db3f2] fold 2: ll 0.2544 auc 0.9692  (2334s)
+[e2db3f2] fold 3: ll 0.2823 auc 0.9565  (3111s)
+[e2db3f2] fold 4: ll 0.2736 auc 0.9589  (3888s)
+[e2db3f2] OOF logloss 0.2808 auroc 0.9562 (3888s)
+[06_cnn2d] e2db3f2 done in 3891 s
+[06_cnn2d] e2db3f2: cnn2d.py --tag e2db3f2 --crops crops_v3_f2.npz --key aligned --views mip3 --epochs 30 --lr 1e-4 --aug 1.0 --res 224 --backbone efficientnet_b3.ra2_in1k --seed-base 9000 --full (Mon Sep 28 05:27:41 EDT 2026)
+[e2db3f2] full-data model saved (965s)
+[06_cnn2d] e2db3f2_full done in 969 s
+  e2dmipf2     ll 0.2866 auc 0.9517
+  e2dmipf22    ll 0.2864 auc 0.9535
+  e2dmipf2x    ll 0.2825 auc 0.9546
+[avg_2d_seeds] wrote oof_e2dmipf2x.csv (1362 rows)
+[06_cnn2d] ts_export e2dmipf2 (Mon Sep 28 05:43:51 EDT 2026)
+fold0: max |eager - traced| logit = 1.98e-05  (res 192, views mip3)
+fold1: max |eager - traced| logit = 1.05e-05  (res 192, views mip3)
+fold2: max |eager - traced| logit = 2.26e-05  (res 192, views mip3)
+fold3: max |eager - traced| logit = 1.03e-05  (res 192, views mip3)
+fold4: max |eager - traced| logit = 9.06e-06  (res 192, views mip3)
+full0: max |eager - traced| logit = 1.96e-05  (res 192, views mip3)
+wrote outputs/e2dmipf2_meta.json
+[06_cnn2d] ts_export e2dmipf2 done in 36 s
+[06_cnn2d] ts_export e2dmipf22 (Mon Sep 28 05:44:27 EDT 2026)
+fold0: max |eager - traced| logit = 1.70e-05  (res 192, views mip3)
+fold1: max |eager - traced| logit = 1.67e-05  (res 192, views mip3)
+fold2: max |eager - traced| logit = 1.62e-05  (res 192, views mip3)
+fold3: max |eager - traced| logit = 1.36e-05  (res 192, views mip3)
+fold4: max |eager - traced| logit = 2.67e-05  (res 192, views mip3)
+full0: max |eager - traced| logit = 1.56e-05  (res 192, views mip3)
+wrote outputs/e2dmipf22_meta.json
+[06_cnn2d] ts_export e2dmipf22 done in 37 s
+[06_cnn2d] ts_export e2db3f2 (Mon Sep 28 05:45:04 EDT 2026)
+fold0: max |eager - traced| logit = 2.26e-05  (res 224, views mip3)
+fold1: max |eager - traced| logit = 1.60e-05  (res 224, views mip3)
+fold2: max |eager - traced| logit = 3.60e-05  (res 224, views mip3)
+fold3: max |eager - traced| logit = 2.29e-05  (res 224, views mip3)
+fold4: max |eager - traced| logit = 3.41e-05  (res 224, views mip3)
+full0: max |eager - traced| logit = 1.69e-05  (res 224, views mip3)
+wrote outputs/e2db3f2_meta.json
+[06_cnn2d] ts_export e2db3f2 done in 88 s
+
+================ [train_all:full] 07 TabICL block (21856 s elapsed) ================
+[07_tabular] 1/4 acquisition groups (regenerated)
+[groups] running src/eda_real.py (log: outputs/logs/eda_real.log)
+[groups] running tools/hdr_fingerprint.py (log: outputs/logs/hdr_fingerprint.log)
+{"rows": 1362, "fam2_counts": {"s246": 528, "thin39": 255, "s23": 207, "small": 153, "s24": 149, "full39": 70}, "group_counts": {"s246/high": 270, "s246/low": 258, "thin39/low": 239, "s23/low": 207, "s24/low": 142, "small/high": 126, "full39/high": 70, "small/low": 27, "thin39/high": 16, "s24/high": 7}}
+[07_tabular] 2/4 shape and mixture features from outputs/crops_v3_f2.npz
+processed 0 elapsed 1
+processed 200 elapsed 9
+processed 400 elapsed 18
+processed 600 elapsed 27
+processed 800 elapsed 36
+processed 1000 elapsed 44
+processed 1200 elapsed 53
+complete (1362, 181) seconds 60
+Mixture shape cases processed 200 seconds 1
+Mixture shape cases processed 400 seconds 2
+Mixture shape cases processed 600 seconds 3
+Mixture shape cases processed 800 seconds 4
+Mixture shape cases processed 1000 seconds 5
+Mixture shape cases processed 1200 seconds 6
+{"rows": 1362, "features": 60, "seconds": 7}
+[07_tabular] 3/4 recipe, context and feature order
+{"rows": 1362, "candidates": 419, "context_shape": [1362, 72], "balanced_rows": 1148, "prior_models": 4, "prior_nonzero": [48, 36, 63, 66], "prior_features": [235, 94, 415, 295], "selector_nonzero": 63, "selected_zero_coef_positions": [63], "v15a_selector_nonzero": 59, "narrow_row_order_matches_rich": true, "feature_order_lengths": {"v15a": 261, "v16": 267, "v17": 479}, "sklearn_warnings": ["FutureWarning: 'penalty' was deprecated in version 1.8 and will be removed in 1.10. To avoid this warning", "UserWarning: Inconsistent values: penalty=l1 with l1_ratio=0.0. penalty is deprecated. Please use l1_ra"]}
+[07_tabular] 4/4 freeze TabICL contexts (CPU, ~3-8 min)
+raw frozen {"max_probability_difference": 0.0, "bytes": 229984736, "sha256": "1a0e793babc8489b5287e2916e902ec9c70853c351c56b5f46953b6ef6febb9b", "raw_records_removed": true, "rows": 1362, "columns": 72, "ensemble_order": ["none", "power"], "pythonhashseed": "1"} seconds 77
+log frozen {"max_probability_difference": 0.0, "bytes": 226749680, "sha256": "5e9ae3442ed1742c0a04a7ff1ff5bb071fefae313075eef2749e142ec767418d", "raw_records_removed": true, "rows": 1148, "columns": 72, "ensemble_order": ["none", "power"], "pythonhashseed": "1"} seconds 152
+[07_tabular] done -> outputs/tabular
+
+================ [train_all:full] 08 stacker + image package spec (22157 s elapsed) ================
+########## 08_stack start Mon Sep 28 05:51:33 EDT 2026 ##########
+########## preconditions (outputs of stages 01-07) ##########
+all inputs present
+########## v14c: members (must be 235/94 columns, no head_ml) ##########
+submission_src/assets/linear_lin.json 235 features, no head_ml/hole_ml
+submission_src/assets/linear_lin4.json 94 features, no head_ml/hole_ml
+########## stacker ##########
+[fixstack] cross-fit T=1: ll 0.2070 auc 0.97228 | T=1.4: ll 0.2167
+[fixstack] wrote ensemble_v14c.json: coef [0.5312, 0.2125, 0.3718, 0.1594, 0.1594] intercept 0.1843
+members ['lin', 'lin4', 'mil48y', 'e2dmipf2', 'e2db3f2'] coef [0.5312, 0.2125, 0.3718, 0.1594, 0.1594]
+########## build ##########
+[build3] e2dmipf2: 12 TorchScript checkpoints (no timm at inference)
+[build3] e2db3f2: 6 TorchScript checkpoints (no timm at inference)
+[build3] members=['lin', 'lin4', 'mil48y', 'e2dmipf2', 'e2db3f2']
+[build3] coef=[0.5312, 0.2125, 0.3718, 0.1594, 0.1594] intercept=0.1843
+[build3] calibration T=1.4 clip=0.005
+[build3] cnns=['mil48y', 'e2dmipf2', 'e2db3f2']
+[build3] candidate_v14c.zip: 530.4 MB
+########## GATE 6: logging (must print nothing) ##########
+OK
+scale 0.5312107357995878 intercept 0.18431409136922594
+members ['lin', 'lin4', 'mil48y', 'e2dmipf2', 'e2db3f2'] cnn sources [34, 12, 6] feature_order 235
+sha256 6459a002a9ef4a90d4e40471c867930db11e98ee5c4ea2310466abd5ceb19c21 outputs/ensemble_v14c.json
+sha256 dcf4e4747c5ed0305cc6411aa1f2d6011bb55a8b091c94eb72bbf9fa923e3707 submission_src/assets/inference_config.json
+sha256 dd7ff7c157499b2fc00e062063d57a1913b6d28c2aa52975808f6d4ac4c364ce candidate_v14c.zip
+zip entries 70
+BUILD_v14c_DONE  19 s  Mon Sep 28 05:51:52 EDT 2026
+
+================ [train_all:full] 09 package submission.zip (22176 s elapsed) ================
+########## 09_package start Mon Sep 28 05:51:52 EDT 2026 ##########
+[package] inference/: 22 files copied verbatim (60 files under inference/assets ignored)
+[package] build3 inference_config.json sha256 dcf4e4747c5ed0305cc6411aa1f2d6011bb55a8b091c94eb72bbf9fa923e3707
+[package] submission_src/assets: 55 image/linear/template assets
+[package] inference_config.json: feature_order 235 -> 479 (tabular list 479 names; equals final order: True); tabicl=true
+[package] tabular: recipe + ['tabular_log.pkl.xz', 'tabular_raw.pkl.xz'] + tabicl-classifier-v2-20260212.ckpt (sha256 matches the shipped checkpoint)
+[package] wrote submission.zip (20 s)
+[package] static gates: PASSED
+[package] check-against {
+  "reference": "submission.zip",
+  "entries": 82,
+  "reference_entries": 82,
+  "crc_and_size_equal": 52,
+  "crc_or_size_mismatch": [
+    "assets/e2db3f2_fold0.ts.pt",
+    "assets/e2db3f2_fold1.ts.pt",
+    "assets/e2db3f2_fold2.ts.pt",
+    "assets/e2db3f2_fold3.ts.pt",
+    "assets/e2db3f2_fold4.ts.pt",
+    "assets/e2db3f2_full0.ts.pt",
+    "assets/e2dmipf22_fold0.ts.pt",
+    "assets/e2dmipf22_fold1.ts.pt",
+    "assets/e2dmipf22_fold2.ts.pt",
+    "assets/e2dmipf22_fold3.ts.pt",
+    "assets/e2dmipf22_fold4.ts.pt",
+    "assets/e2dmipf22_full0.ts.pt",
+    "assets/e2dmipf2_fold0.ts.pt",
+    "assets/e2dmipf2_fold1.ts.pt",
+    "assets/e2dmipf2_fold2.ts.pt",
+    "assets/e2dmipf2_fold3.ts.pt",
+    "assets/e2dmipf2_fold4.ts.pt",
+    "assets/e2dmipf2_full0.ts.pt",
+    "assets/mil48a_fold0.pt",
+    "assets/mil48a_fold1.pt",
+    "assets/mil48a_fold2.pt",
+    "assets/mil48a_fold3.pt",
+    "assets/mil48a_fold4.pt",
+    "assets/mil48b_fold0.pt",
+    "assets/mil48b_fold1.pt",
+    "assets/mil48b_fold2.pt",
+    "assets/mil48b_fold3.pt",
+    "assets/mil48b_fold4.pt",
+    "assets/tabular_log.pkl.xz",
+    "assets/tabular_raw.pkl.xz"
+  ],
+  "compress_type_mismatch": [],
+  "only_in_package": [],
+  "only_in_reference": [],
+  "same_entry_order": true,
+  "identical_contents": false
+}
+{"zip_bytes": 1090115337, "sha256": "a37e884b74677c9397a17b0464506d73b03bf2d3c2b1825481875afa4854d3d7", "entries": 82, "shallow_container_import_passed": true}
+[package] done in 23 s
+[train_all] some entries differ from the reference archive (expected for the re-frozen TabICL contexts and any retrained or scrubbed checkpoint; see docs/stages/08-09_stack_and_package.md)
+
+================ [train_all:full] done: outputs/v17/submission.zip (22199 s elapsed) ================

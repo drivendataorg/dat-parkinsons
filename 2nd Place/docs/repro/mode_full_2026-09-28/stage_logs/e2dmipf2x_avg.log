@@ -1,0 +1,4 @@
+  e2dmipf2     ll 0.2866 auc 0.9517
+  e2dmipf22    ll 0.2864 auc 0.9535
+  e2dmipf2x    ll 0.2825 auc 0.9546
+[avg_2d_seeds] wrote oof_e2dmipf2x.csv (1362 rows)

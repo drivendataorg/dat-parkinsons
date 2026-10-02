@@ -1,0 +1,2 @@
+[mf27000] dev=mps arch=mil x(1362, 1, 48, 48, 48) key=aligned size=48 epochs=20
+[mf27000] full-data model -> mf27000_full0.pt (418s)

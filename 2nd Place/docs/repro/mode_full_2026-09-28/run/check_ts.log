@@ -1,0 +1,19 @@
+[ts] e2dmipf2_fold0 vs shipped e2dmipf2_fold0: sha256_equal False max|dlogit| 0.00e+00 mean 0.00e+00
+[ts] e2dmipf2_fold1 vs shipped e2dmipf2_fold1: sha256_equal False max|dlogit| 0.00e+00 mean 0.00e+00
+[ts] e2dmipf2_fold2 vs shipped e2dmipf2_fold2: sha256_equal False max|dlogit| 0.00e+00 mean 0.00e+00
+[ts] e2dmipf2_fold3 vs shipped e2dmipf2_fold3: sha256_equal False max|dlogit| 0.00e+00 mean 0.00e+00
+[ts] e2dmipf2_fold4 vs shipped e2dmipf2_fold4: sha256_equal False max|dlogit| 0.00e+00 mean 0.00e+00
+[ts] e2dmipf2_full0 vs shipped e2dmipf2_full0: sha256_equal False max|dlogit| 0.00e+00 mean 0.00e+00
+[ts] e2dmipf22_fold0 vs shipped e2dmipf22_fold0: sha256_equal False max|dlogit| 0.00e+00 mean 0.00e+00
+[ts] e2dmipf22_fold1 vs shipped e2dmipf22_fold1: sha256_equal False max|dlogit| 0.00e+00 mean 0.00e+00
+[ts] e2dmipf22_fold2 vs shipped e2dmipf22_fold2: sha256_equal False max|dlogit| 0.00e+00 mean 0.00e+00
+[ts] e2dmipf22_fold3 vs shipped e2dmipf22_fold3: sha256_equal False max|dlogit| 0.00e+00 mean 0.00e+00
+[ts] e2dmipf22_fold4 vs shipped e2dmipf22_fold4: sha256_equal False max|dlogit| 0.00e+00 mean 0.00e+00
+[ts] e2dmipf22_full0 vs shipped e2dmipf22_full0: sha256_equal False max|dlogit| 0.00e+00 mean 0.00e+00
+[ts] e2db3f2_fold0 vs shipped e2db3f2_fold0: sha256_equal False max|dlogit| 0.00e+00 mean 0.00e+00
+[ts] e2db3f2_fold1 vs shipped e2db3f2_fold1: sha256_equal False max|dlogit| 0.00e+00 mean 0.00e+00
+[ts] e2db3f2_fold2 vs shipped e2db3f2_fold2: sha256_equal False max|dlogit| 0.00e+00 mean 0.00e+00
+[ts] e2db3f2_fold3 vs shipped e2db3f2_fold3: sha256_equal False max|dlogit| 0.00e+00 mean 0.00e+00
+[ts] e2db3f2_fold4 vs shipped e2db3f2_fold4: sha256_equal False max|dlogit| 0.00e+00 mean 0.00e+00
+[ts] e2db3f2_full0 vs shipped e2db3f2_full0: sha256_equal False max|dlogit| 0.00e+00 mean 0.00e+00
+[verify_cnn] ts done in 493.9 s -> outputs/chk_retrain_ts.json

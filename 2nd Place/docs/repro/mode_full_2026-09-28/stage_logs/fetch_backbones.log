@@ -1,0 +1,4 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[backbones] timm 1.0.28
+[backbones] efficientnet_b0.ra_in1k: repo timm/efficientnet_b0.ra_in1k revision 1b5383e5f79cc0f7fc067e372f8f26a5fa73f26a file model.safetensors size 21355344 sha256 d569899762ea9b1384ee07f4af64805cf8caa1c55f9253ebb1080dc40e87a2cd OK
+[backbones] efficientnet_b3.ra2_in1k: repo timm/efficientnet_b3.ra2_in1k revision 0366a75518620e0f2077789202073759f2d61393 file model.safetensors size 49335454 sha256 279d2a53898aa89dab43fd6bd7df9f706aea4cb9cf916223988bbcb8e5850469 OK

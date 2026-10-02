@@ -1,0 +1,84 @@
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 3 concurrent workers.
+[labels] 1362 rows | prevalence=0.5485 | pathologic=747 normal=615
+[linkage] missing images for labels: 0 | images without labels: 0
+[Parallel(n_jobs=-1)]: Done 250 tasks      | elapsed:    2.2s
+<repo>/.venv-train/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py:782: UserWarning: A worker stopped while some jobs were given to the executor. This can be caused by a too short worker timeout or by a memory leak.
+  warnings.warn(
+[Parallel(n_jobs=-1)]: Done 575 tasks      | elapsed:   34.0s
+[Parallel(n_jobs=-1)]: Done 1362 out of 1362 | elapsed:  1.2min finished
+[probe] failed: 0
+
+=== SHAPE distribution (nx,ny,nz) ===
+nx   ny   nz 
+256  256  256    460
+128  128  128    295
+          87     143
+          45      46
+          43      38
+          39      33
+          40      29
+          42      28
+          41      26
+          90      26
+          38      25
+          49      21
+          37      19
+          36      16
+          44      12
+dtype: int64
+
+=== VOXEL SPACING distribution (sx,sy,sz) ===
+sx      sy      sz    
+2.4600  2.4600  2.4600    528
+3.8954  3.8954  3.9000    254
+2.3000  2.3000  2.3000    207
+2.3976  2.3976  2.3976    143
+3.8954  3.8954  3.8954     71
+3.2957  3.2957  3.3000     26
+1.4683  1.4683  1.5000     25
+3.3047  3.3047  3.0000     13
+2.0000  2.0000  4.0000     10
+4.4196  4.4196  4.4196      9
+3.5910  3.5910  3.5910      9
+2.3976  2.3976  2.4000      6
+1.6535  1.6535  3.0000      5
+1.6192  1.6192  3.0000      3
+1.5781  1.5781  3.0000      3
+dtype: int64
+
+=== ORIENTATION codes ===
+orient
+RAS    1362
+Name: count, dtype: int64
+
+=== NDIM ===
+ndim
+3    1362
+Name: count, dtype: int64
+
+=== DTYPE ===
+dtype
+uint16    1346
+int16       16
+Name: count, dtype: int64
+
+=== physical extent mm (n*spacing) ===
+        ext_x   ext_y   ext_z
+count  1362.0  1362.0  1362.0
+mean    461.1   461.1   371.1
+std     148.5   148.5   203.3
+min     175.6   175.6   108.0
+25%     306.9   306.9   175.5
+50%     498.6   498.6   294.4
+75%     629.8   629.8   629.8
+max     629.8   629.8   629.8
+
+=== intensity: vmax, p99, frac_pos by class ===
+                vmax   p99  vmean  frac_pos
+is_pathologic                              
+0.0            255.0  73.0   6.95      0.18
+1.0            210.0  62.0   4.78      0.17
+
+=== nonfinite voxels: scans affected === 0
+
+[saved] outputs/eda_real_geometry.csv + eda_real_summary.json

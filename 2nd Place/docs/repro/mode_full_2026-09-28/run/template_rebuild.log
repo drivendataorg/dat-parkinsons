@@ -1,0 +1,25 @@
+[reg] (1362, 48, 48, 48) on mps
+  [tpl] pass 0: mean ncc 0.7797
+  [tpl] pass 1: mean ncc 0.7872
+  [tpl] pass 2: mean ncc 0.7879
+[reg] template built (348s)
+[reg] fit ncc mean 0.7884 min 0.1594 | rot deg mean 12.91 max 137.14 (464s)
+[reg] wrote crops_reg_rebuild.npz and template_v6_rebuild.npy (482s)
+      484.32 real        24.55 user         2.77 sys
+          2635202560  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              234745  page reclaims
+                8932  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                5067  voluntary context switches
+               77962  involuntary context switches
+        222352226818  instructions retired
+         99608339145  cycles elapsed
+          6942771888  peak memory footprint

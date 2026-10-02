@@ -1,0 +1,33 @@
+{
+  "logloss": 0.28636970380522414,
+  "auroc": 0.9535399048769605,
+  "args": {
+    "tag": "e2dmipf22",
+    "backbone": "efficientnet_b0.ra_in1k",
+    "scratch": false,
+    "crops": "crops_v3_f2.npz",
+    "key": "aligned",
+    "res": 192,
+    "views": "mip3",
+    "hemi": false,
+    "epochs": 30,
+    "bs": 32,
+    "lr": 0.0001,
+    "wd": 0.01,
+    "drop": 0.3,
+    "warmup": 3,
+    "ema": 0.995,
+    "mixup": 0.4,
+    "mixup_p": 1.0,
+    "label_smooth": 0.02,
+    "aug": 1.0,
+    "ref_jitter": 0.12,
+    "seed_base": 9100,
+    "only_fold": -1,
+    "full": false,
+    "full_tag": "full0",
+    "folds": "folds.csv",
+    "verbose": false,
+    "no_save": false
+  }
+}
