@@ -1,0 +1,128 @@
+17d16
+< import timm
+27,52c26,27
+<         
+<         # Base ResNet50
+<         backbone = models.resnet50(weights=None, num_classes=100)
+< 
+<         # Remplacement CIFAR-style EXACTEMENT comme à l'entraînement
+<         backbone.conv1 = nn.Conv2d(
+<             3, 64,
+<             kernel_size=3,
+<             stride=1,
+<             padding=1,
+<             bias=False
+<         )
+<         backbone.maxpool = nn.Identity()
+< 
+<         # Reconstruction de self.features
+<         self.features = nn.Sequential(
+<             backbone.conv1,
+<             backbone.bn1,
+<             backbone.relu,
+<             backbone.maxpool,
+<             backbone.layer1,
+<             backbone.layer2,
+<             backbone.layer3,
+<             backbone.layer4,
+<         )
+< 
+---
+>         backbone = models.resnet50(weights=None) # Pas besoin des poids ImageNet à l'inférence
+>         self.features = nn.Sequential(*list(backbone.children())[:-2])
+55d29
+< 
+59,61c33,35
+<             nn.SiLU(),
+<             nn.Dropout(dropout_rate),
+<             nn.Linear(512, 1)
+---
+>             nn.SiLU(),                     
+>             nn.Dropout(dropout_rate),      
+>             nn.Linear(512, 1)      
+65,68c39,42
+<         x = self.features(x)
+<         avg_x = self.avg_pool(x).flatten(1)
+<         max_x = self.max_pool(x).flatten(1)
+<         x = torch.cat([avg_x, max_x], dim=1)
+---
+>         x = self.features(x)                                 
+>         avg_x = self.avg_pool(x).view(x.size(0), -1)         
+>         max_x = self.max_pool(x).view(x.size(0), -1)         
+>         x = torch.cat([avg_x, max_x], dim=1)                 
+71d44
+< 
+75,84c48,50
+<         
+<         # Utilisation stricte de TIMM comme à l'entraînement
+<         self.backbone = timm.create_model(
+<             "vit_base_patch16_224",
+<             pretrained=False,
+<             num_classes=0,
+<         )
+< 
+<         in_features = self.backbone.num_features  # 768
+< 
+---
+>         self.backbone = models.vit_b_16(weights=None)
+>         in_features = self.backbone.heads.head.in_features
+>         self.backbone.heads = nn.Identity() 
+88,90c54,56
+<             nn.SiLU(),
+<             nn.Dropout(dropout_rate),
+<             nn.Linear(256, 1)
+---
+>             nn.SiLU(),                     
+>             nn.Dropout(dropout_rate),      
+>             nn.Linear(256, 1)      
+115c81
+<             model = MedicalResNet(dropout_rate=0.0) 
+---
+>             model = MedicalResNet(dropout_rate=0.0) # Doit correspondre à l'entraînement
+117c83
+<             # Chargement sécurisé
+---
+>             # Chargement sécurisé (map_location permet de charger sur CPU si pas de GPU)
+118a85
+>             # Gestion de MONAI/PyTorch save formats
+129c96
+<             transforms.Normalize(mean=[0.5071, 0.4867, 0.4408], std=[0.2675, 0.2565, 0.2761]) # Corrigé avec tes stats CIFAR
+---
+>             transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+133,134c100,104
+<         if not slices_2d:
+<             return 0.5 
+---
+>         """
+>         Prend la liste `slices_2d` du preprocessing et renvoie la proba finale.
+>         """
+>         if not slices_2d:
+>             return 0.5 # Sécurité si aucune coupe n'est valide
+135a106
+>         # 1. Préparation du batch (Toutes les coupes du patient)
+145a117
+>         # 2. Inférence sur les 5 folds
+150a123,124
+>                 
+>                 # Agrégation Patient : on moyenne les probas des 5 coupes
+154c128,130
+<         return float(np.mean(fold_probs))
+---
+>         # 3. Agrégation Ensemble : on moyenne les avis des 5 folds
+>         final_ensemble_prob = np.mean(fold_probs)
+>         return float(final_ensemble_prob)
+181c157
+<         # Transforms de validation (Resize 224x224 obligatoire pour un ViT)
+---
+>         # Transforms de validation Spécifique ViT (Resize 224x224 obligatoire)
+188a165,167
+>         """
+>         Prend la liste `slices_2d` du preprocessing et renvoie la proba finale.
+>         """
+206a186
+>                 
+210c190,191
+<         return float(np.mean(fold_probs))
+---
+>         final_ensemble_prob = np.mean(fold_probs)
+>         return float(final_ensemble_prob)

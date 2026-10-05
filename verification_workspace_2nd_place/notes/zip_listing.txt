@@ -1,0 +1,87 @@
+Archive:  references/submissions/comp_subs/2nd_place/2nd_place_submission.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+     3731  09-14-2026 14:22   CANDIDATE.json
+     1170  09-14-2026 00:08   TABICL_MODEL_CARD.md
+ 42701870  09-14-2026 01:27   assets/e2db3f2_fold0.ts.pt
+ 42701872  09-14-2026 01:27   assets/e2db3f2_fold1.ts.pt
+ 42701872  09-14-2026 01:27   assets/e2db3f2_fold2.ts.pt
+ 42701872  09-14-2026 01:27   assets/e2db3f2_fold3.ts.pt
+ 42701872  09-14-2026 01:27   assets/e2db3f2_fold4.ts.pt
+ 42701872  09-14-2026 01:27   assets/e2db3f2_full0.ts.pt
+ 16006252  09-14-2026 01:27   assets/e2dmipf22_fold0.ts.pt
+ 16006252  09-14-2026 01:27   assets/e2dmipf22_fold1.ts.pt
+ 16006254  09-14-2026 01:27   assets/e2dmipf22_fold2.ts.pt
+ 16006254  09-14-2026 01:27   assets/e2dmipf22_fold3.ts.pt
+ 16006254  09-14-2026 01:27   assets/e2dmipf22_fold4.ts.pt
+ 16006254  09-14-2026 01:27   assets/e2dmipf22_full0.ts.pt
+ 16006017  09-14-2026 01:27   assets/e2dmipf2_fold0.ts.pt
+ 16006017  09-14-2026 01:27   assets/e2dmipf2_fold1.ts.pt
+ 16006019  09-14-2026 01:27   assets/e2dmipf2_fold2.ts.pt
+ 16006019  09-14-2026 01:27   assets/e2dmipf2_fold3.ts.pt
+ 16006019  09-14-2026 01:27   assets/e2dmipf2_fold4.ts.pt
+ 16006019  09-14-2026 01:27   assets/e2dmipf2_full0.ts.pt
+    33685  09-14-2026 14:06   assets/inference_config.json
+    28463  09-14-2026 01:27   assets/linear_lin.json
+    11699  09-14-2026 01:27   assets/linear_lin4.json
+  3597645  09-14-2026 01:27   assets/m31000_fold0.pt
+  3597645  09-14-2026 01:27   assets/m31000_fold1.pt
+  3597645  09-14-2026 01:27   assets/m31000_fold2.pt
+  3597645  09-14-2026 01:27   assets/m31000_fold3.pt
+  3597645  09-14-2026 01:27   assets/m31000_fold4.pt
+  3597645  09-14-2026 01:27   assets/m33000_fold0.pt
+  3597645  09-14-2026 01:27   assets/m33000_fold1.pt
+  3597645  09-14-2026 01:27   assets/m33000_fold2.pt
+  3597645  09-14-2026 01:27   assets/m33000_fold3.pt
+  3597645  09-14-2026 01:27   assets/m33000_fold4.pt
+  3597645  09-14-2026 01:27   assets/m35000_fold0.pt
+  3597645  09-14-2026 01:27   assets/m35000_fold1.pt
+  3597645  09-14-2026 01:27   assets/m35000_fold2.pt
+  3597645  09-14-2026 01:27   assets/m35000_fold3.pt
+  3597645  09-14-2026 01:27   assets/m35000_fold4.pt
+  3597645  09-14-2026 01:27   assets/m37000_fold0.pt
+  3597645  09-14-2026 01:27   assets/m37000_fold1.pt
+  3597645  09-14-2026 01:27   assets/m37000_fold2.pt
+  3597645  09-14-2026 01:27   assets/m37000_fold3.pt
+  3597645  09-14-2026 01:27   assets/m37000_fold4.pt
+  3597689  09-14-2026 01:27   assets/mf21000_full0.pt
+  3597689  09-14-2026 01:27   assets/mf23000_full0.pt
+  3597689  09-14-2026 01:27   assets/mf25000_full0.pt
+  3597689  09-14-2026 01:27   assets/mf27000_full0.pt
+  3597517  09-14-2026 01:27   assets/mil48a_fold0.pt
+  3597517  09-14-2026 01:27   assets/mil48a_fold1.pt
+  3597517  09-14-2026 01:27   assets/mil48a_fold2.pt
+  3597517  09-14-2026 01:27   assets/mil48a_fold3.pt
+  3597517  09-14-2026 01:27   assets/mil48a_fold4.pt
+  3597517  09-14-2026 01:27   assets/mil48b_fold0.pt
+  3597517  09-14-2026 01:27   assets/mil48b_fold1.pt
+  3597517  09-14-2026 01:27   assets/mil48b_fold2.pt
+  3597517  09-14-2026 01:27   assets/mil48b_fold3.pt
+  3597517  09-14-2026 01:27   assets/mil48b_fold4.pt
+110368038  09-14-2026 00:08   assets/tabicl-classifier-v2-20260212.ckpt
+226742860  09-14-2026 14:09   assets/tabular_log.pkl.xz
+229985568  09-14-2026 14:08   assets/tabular_raw.pkl.xz
+   211539  09-14-2026 14:06   assets/tabular_recipe.json
+   442496  09-14-2026 01:27   assets/template_v6.npy
+    17864  09-14-2026 01:27   cnn2d.py
+    26252  09-14-2026 01:27   cnn3.py
+    16881  09-14-2026 01:27   cnn4.py
+     4127  09-14-2026 01:27   features13.py
+     8230  09-14-2026 01:27   features4.py
+     2983  09-14-2026 01:27   features5.py
+     5806  09-14-2026 01:27   features6.py
+    23753  09-14-2026 14:06   inference_main.py
+      816  09-14-2026 08:58   main.py
+     3040  09-14-2026 14:06   mixture_features.py
+    15863  09-14-2026 01:27   nets3.py
+     5044  09-14-2026 01:27   portable3.py
+    39996  09-14-2026 01:27   preprocessing3.py
+     5345  09-14-2026 01:27   regfit.py
+    11938  09-14-2026 01:27   register3.py
+     6248  09-14-2026 01:27   roigeom.py
+     3349  09-14-2026 09:10   scale_features.py
+   286222  09-14-2026 08:58   tabicl_lib.zip
+    12996  09-14-2026 00:07   tabicl_licenses/LICENSE
+     3940  09-14-2026 14:06   tabular_adapter.py
+---------                     -------
+1138933628                     82 files

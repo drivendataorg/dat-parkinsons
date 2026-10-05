@@ -1,0 +1,7 @@
+file references/submissions/comp_subs/1st_place/1st_place_submission.csv sha256 8287800024040c56dd6c63db4ff1fa0f6c88328f307fbbc15b70d4a2d0bb7ece
+rows 524 | uid order == submission_format: True | dupes 0
+range [0.012561184675643966, 0.99], distinct 416, rows at 0.99: 109, rows at 0.5: 0, rows <=0.01: 0
+logloss full test (n=524): 0.253233
+logloss public subset (n=262): 0.224948
+logloss private-only subset (n=262): 0.281519
+upper clip 0.99 only; no lower clip value appears (min 0.012561)

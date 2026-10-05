@@ -1,0 +1,4 @@
+28c28
+<         self.model_path = os.path.join(models_dir, f"{model_name}.pkl")
+---
+>         self.model_path = os.path.join(models_dir, f"{model_name}_final.pkl")

@@ -1,0 +1,24 @@
+Archive:  references/submissions/comp_subs/1st_place/1st_place_submission.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  01-01-1980 00:00   __pycache__/
+      243  01-01-1980 00:00   __pycache__/constants.cpython-312.pyc
+    13931  01-01-1980 00:00   __pycache__/main.cpython-312.pyc
+     5665  01-01-1980 00:00   check_orientation.py
+     5617  01-01-1980 00:00   check_tta_augmentations.py
+     3976  01-01-1980 00:00   compare_inputs.py
+      567  01-01-1980 00:00   constants.py
+     5789  01-01-1980 00:00   copy_weights.py
+     9070  01-01-1980 00:00   diagnose3d.py
+    12972  01-01-1980 00:00   generate_tta_oof.py
+    16584  01-01-1980 00:00   main.py
+     9831  01-01-1980 00:00   run_siamese_tta.py
+217115494  01-01-1980 00:00   src.zip
+     6352  01-01-1980 00:00   test_inference.py
+  1499219  01-01-1980 00:00   tta_siamese_predictions.csv
+    16581  01-01-1980 00:00   validate_inference.py
+    34655  01-01-1980 00:00   validate_pipeline.py
+    65855  01-01-1980 00:00   validation_report.csv
+787901114  01-01-1980 00:00   weights.zip
+---------                     -------
+1006723515                     19 files

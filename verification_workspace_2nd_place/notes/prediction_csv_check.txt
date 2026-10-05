@@ -1,0 +1,6 @@
+file references/submissions/comp_subs/2nd_place/2nd_place_submission.csv sha256 293d7041037dd6e38b55de53efbf5838df44e7de1f0a007257ca50fd5ef8e37a
+rows 524, uid order == submission_format.csv, 0 dupes, range [0.005,0.995], 115 rows at 0.995, 4 at 0.005, 407 distinct values
+clip 0.005 explained by harness assets/inference_config.json:502 + inference/inference_main.py:253,475-477
+logloss full test (n=524): 0.273088
+logloss public subset (n=262): 0.240858
+logloss private-only subset (n=262): 0.305317

@@ -1,0 +1,18 @@
+20c20
+< DATA_DIR = Path()
+---
+> DATA_DIR = Path("/data2/iceberg/dat_parkinson/data-demo")
+28a29,30
+> # 🚀 NOUVEAU SYSTÈME DE CONFIGURATION RÉTROCOMPATIBLE
+> # Options : "FAMILY_STACKING" | "STACKING_SKLEARN" | "SOLO"
+30a33
+> # Configurations spécifiques selon le mode choisi :
+32a36
+> # Définit les 4 familles exactes à moyenner en mode FAMILY_STACKING
+34c38,41
+<     "Mashup_Internal",        # 3br
+---
+>     # "Mashup_Internal_DWT",  # 4br
+>     "Mashup_Internal",      # 3br
+>     # "MiniCNN3D",            # 3d (à ajuster selon le modèle exact que tu veux utiliser)
+>     # "XGBoost"               # xgb

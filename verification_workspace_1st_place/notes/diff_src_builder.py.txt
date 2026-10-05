@@ -1,0 +1,13 @@
+1003,1012c1003
+<         # On isole ce qui vient après "mednext" (ex: "_b", "b", "-b")
+<         suffix = model_name.split('mednext')[-1]
+<         
+<         # On déduit la taille de manière robuste
+<         mednext_size = 'B'  # Taille par défaut
+<         if 's' in suffix: mednext_size = 'S'
+<         elif 'm' in suffix: mednext_size = 'M'
+<         elif 'l' in suffix: mednext_size = 'L'
+<         elif 'b' in suffix: mednext_size = 'B'
+<         
+---
+>         mednext_size = model_name.replace('mednext-', '').upper()
