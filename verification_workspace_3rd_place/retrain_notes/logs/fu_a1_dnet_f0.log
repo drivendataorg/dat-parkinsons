@@ -1,0 +1,45 @@
+recipe: densenet121 seed 1 ep 120 ema 0.999 tau 4.09*mu+1.259
+  ARM: {'rot_deg': 31.7, 'sagfuse': 'attnres', 'sagfuse_aug': True, 'sagfuse_aux': 0.3, 'anchor_guard': True, 'ndt_anchor': 'striatal', 'mask3d_cache': '/home/ec2-user/sfmn3/work/boxcache/canonv2mask_ell.u8.npy', 'lesion_p': 0.25, 'lesion_lo': 0.45, 'lesion_hi': 0.9, 'fuse_lr_mult': 0.3, 'box_cache': '/home/ec2-user/sfmn3/work/boxcache/canonv2.f16.npy', 'splits': 'meta/cv_round2.csv'}
+  NDT anchor = STRIATAL (one scalar per scan, mask through the image affine, window fallback)
+  weight EMA decay=0.999 (this IS the shipped artifact, not the last weights)
+  COUNTERFACTUAL LESION: p=0.25 sev [0.45,0.9] order_w=0.0 k=8 margin=0.5
+  LESION FIRED: 2 normals relabelled abnormal, 0 ordering pairs, batch 24 -> 24 rows
+  SAGFUSE_AUX FIRED: w=0.3, 2 view logits supervised
+[fu_a1_dnet f0] ep00 val ll 0.6627 auc 0.8423 (best 0.6627@0)
+[fu_a1_dnet f0] ep10 val ll 0.5537 auc 0.9628 (best 0.2817@9)
+[fu_a1_dnet f0] ep20 val ll 0.2264 auc 0.9696 (best 0.2264@20)
+[fu_a1_dnet f0] ep30 val ll 0.2131 auc 0.9736 (best 0.2028@27)
+[fu_a1_dnet f0] ep40 val ll 0.2224 auc 0.9755 (best 0.1875@39)
+[fu_a1_dnet f0] ep50 val ll 0.2178 auc 0.9798 (best 0.1875@39)
+[fu_a1_dnet f0] ep60 val ll 0.1826 auc 0.9804 (best 0.1809@58)
+[fu_a1_dnet f0] ep70 val ll 0.1887 auc 0.9813 (best 0.1756@68)
+[fu_a1_dnet f0] ep80 val ll 0.1843 auc 0.9803 (best 0.1756@68)
+[fu_a1_dnet f0] ep90 val ll 0.2119 auc 0.9823 (best 0.1756@68)
+[fu_a1_dnet f0] ep100 val ll 0.1771 auc 0.9833 (best 0.1756@68)
+[fu_a1_dnet f0] ep110 val ll 0.1931 auc 0.9838 (best 0.1694@108)
+[fu_a1_dnet f0] ep119 val ll 0.1899 auc 0.9838 (best 0.1694@108)
+[fu_a1_dnet f0] EMA checkpoint + BN recal (242 layers)
+[fu_a1_dnet f0] done 31.7 min: ll 0.2026 auc 0.9829
+	Command being timed: "/home/ec2-user/sfmn3/.venv/bin/python -u -m datscan --member fu_a1_dnet --out /home/ec2-user/sfmn3/work/runs_fusion10 --folds 0 --workers 2 --gpu 0 --set ndt_anchor=striatal anchor_guard=true rot_deg=31.7 lesion_p=0.25 lesion_lo=0.45 lesion_hi=0.90 box_cache=/home/ec2-user/sfmn3/work/boxcache/canonv2.f16.npy mask3d_cache=/home/ec2-user/sfmn3/work/boxcache/canonv2mask_ell.u8.npy sagfuse=attnres sagfuse_aux=0.3 sagfuse_aug=true fuse_lr_mult=0.3 splits=meta/cv_round2.csv seed=1"
+	User time (seconds): 2456.73
+	System time (seconds): 2086.08
+	Percent of CPU this job got: 237%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 31:51.77
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6052340
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 983
+	Minor (reclaiming a frame) page faults: 682910695
+	Voluntary context switches: 1046000
+	Involuntary context switches: 19891
+	Swaps: 0
+	File system inputs: 337048
+	File system outputs: 177024
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
