@@ -1,0 +1,83 @@
+[main] Starting at Friday 2026-10-09 17:21:33
+
+============================================================
+🚀 LANCEMENT ENSEMBLE K-FOLD 🚀
+Machine : cuda | Résolution : (128, 128, 128)
+Batch physique : 4 | Accumulation : 4 | Effectif : 16
+Run name: medicalnet200 | Model : medicalnet
+============================================================
+
+📥 Lecture des labels…
+Volume cache complete (100 volumes in /home/ec2-user/sfmn1/data/vol_cache)
+
+******************** FOLD 1/5 ********************
+📊 Données : 80 Train | 20 Validation
+📏 Input size: torch.Size([1, 128, 128, 128])
+  (conv1): Conv3d(1, 64, kernel_size=(7, 7, 7), stride=(2, 2, 2), padding=(3, 3, 3), bias=False)
+  (bn1): BatchNorm3d(64, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+  (relu): ReLU(inplace=True)
+  (maxpool): MaxPool3d(kernel_size=(3, 3, 3), stride=2, padding=1, dilation=1, ceil_mode=False)
+  (layer1): Sequential(
+  (0): Bottleneck(
+    (conv1): Conv3d(64, 64, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+    (bn1): BatchNorm3d(64, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (conv2): Conv3d(64, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), bias=False)
+    (bn2): BatchNorm3d(64, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (conv3): Conv3d(64, 256, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+    (bn3): BatchNorm3d(256, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (relu): ReLU(inplace=True)
+    (downsample): Sequential(
+      (0): Conv3d(64, 256, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+      (1): BatchNorm3d(256, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    )
+  )
+  (1): Bottleneck(
+    (conv1): Conv3d(256, 64, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+    (bn1): BatchNorm3d(64, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (conv2): Conv3d(64, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), bias=False)
+    (bn2): BatchNorm3d(64, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (conv3): Conv3d(64, 256, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+    (bn3): BatchNorm3d(256, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (relu): ReLU(inplace=True)
+  )
+  (2): Bottleneck(
+    (conv1): Conv3d(256, 64, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+    (bn1): BatchNorm3d(64, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (conv2): Conv3d(64, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1), bias=False)
+    (bn2): BatchNorm3d(64, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (conv3): Conv3d(64, 256, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+    (bn3): BatchNorm3d(256, eps=1e-05, momentum=0.1, affine=True, bias=True, track_running_stats=True)
+    (relu): ReLU(inplace=True)
+  )
+)
+  (layer2): ... [Repeated instance of Sequential]
+  (layer3): ... [Repeated instance of Sequential]
+  (layer4): ... [Repeated instance of Sequential]
+  (pool): AdaptiveAvgPool3d(output_size=1)
+  (classifier): ... [Repeated instance of Sequential]
+🧠 Total Parameters: 127,084,353
+
+                                                                                                    
+
+                                                                                                       
+
+                                                                                                       
+
+                                                                                                       
+
+                                                                                                       
+
+                                                                                                       
+
+                                                                                                       
+
+                                                                                                       
+
+                                                                                                       
+
+                                                                                                       
+
+                                                                                                       
+
+                                                                                                       
+

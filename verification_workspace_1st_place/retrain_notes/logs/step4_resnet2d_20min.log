@@ -1,0 +1,124 @@
+
+============================================================
+🚀 ENTRAÎNEMENT RESNET-50 FINAL | Mode: KFOLD
+============================================================
+
+
+****************** FOLD 0 ******************
+
+                                                                   
+
+                                                                 
+Ep 01/30 | LR: 4.9e-04 | Train Loss: 0.5280 | Val Loss: 0.5391 | Val AUC: 0.9010 🌟 Nouveau best!
+
+                                                                   
+
+                                                                 
+Ep 02/30 | LR: 4.6e-04 | Train Loss: 0.4619 | Val Loss: 0.4864 | Val AUC: 0.9023 🌟 Nouveau best!
+
+                                                                   
+
+                                                                 
+Ep 03/30 | LR: 4.2e-04 | Train Loss: 0.4443 | Val Loss: 0.3481 | Val AUC: 0.9347 🌟 Nouveau best!
+
+                                                                   
+
+                                                                 
+Ep 04/30 | LR: 3.6e-04 | Train Loss: 0.4229 | Val Loss: 0.3962 | Val AUC: 0.9383
+
+                                                                   
+
+                                                                 
+Ep 05/30 | LR: 3.0e-04 | Train Loss: 0.4165 | Val Loss: 0.3733 | Val AUC: 0.9466
+
+                                                                   
+
+                                                                 
+Ep 06/30 | LR: 2.4e-04 | Train Loss: 0.4020 | Val Loss: 0.3646 | Val AUC: 0.9443
+
+                                                                   
+
+                                                                 
+Ep 07/30 | LR: 1.8e-04 | Train Loss: 0.3958 | Val Loss: 0.3260 | Val AUC: 0.9543 🌟 Nouveau best!
+
+                                                                   
+
+                                                                 
+Ep 08/30 | LR: 1.4e-04 | Train Loss: 0.3916 | Val Loss: 0.3612 | Val AUC: 0.9546
+
+                                                                   
+
+                                                                 
+Ep 09/30 | LR: 1.1e-04 | Train Loss: 0.3735 | Val Loss: 0.3022 | Val AUC: 0.9590 🌟 Nouveau best!
+
+                                                                   
+
+                                                                 
+Ep 10/30 | LR: 5.0e-04 | Train Loss: 0.3710 | Val Loss: 0.3205 | Val AUC: 0.9538
+
+                                                                   
+
+                                                                 
+Ep 11/30 | LR: 5.0e-04 | Train Loss: 0.4063 | Val Loss: 0.3854 | Val AUC: 0.9336
+
+                                                                   
+
+                                                                 
+Ep 12/30 | LR: 4.9e-04 | Train Loss: 0.4072 | Val Loss: 0.4255 | Val AUC: 0.9434
+
+                                                                   
+
+                                                                 
+Ep 13/30 | LR: 4.8e-04 | Train Loss: 0.4097 | Val Loss: 0.3593 | Val AUC: 0.9404
+
+                                                                   
+
+                                                                 
+Ep 14/30 | LR: 4.6e-04 | Train Loss: 0.4032 | Val Loss: 0.3502 | Val AUC: 0.9363
+
+                                                                   
+
+                                                                 
+Ep 15/30 | LR: 4.4e-04 | Train Loss: 0.3957 | Val Loss: 0.3517 | Val AUC: 0.9403
+
+                                                                   
+
+                                                                 
+Ep 16/30 | LR: 4.2e-04 | Train Loss: 0.3863 | Val Loss: 0.3513 | Val AUC: 0.9409
+
+                                                                   
+
+                                                                 
+Ep 17/30 | LR: 3.9e-04 | Train Loss: 0.3867 | Val Loss: 0.3260 | Val AUC: 0.9499
+
+                                                                   
+
+                                                                 
+Ep 18/30 | LR: 3.6e-04 | Train Loss: 0.3824 | Val Loss: 0.3145 | Val AUC: 0.9564
+
+                                                                   
+
+                                                                 
+Ep 19/30 | LR: 3.3e-04 | Train Loss: 0.3701 | Val Loss: 0.3103 | Val AUC: 0.9614
+
+                                                                   
+
+                                                                 
+Ep 20/30 | LR: 3.0e-04 | Train Loss: 0.3662 | Val Loss: 0.3231 | Val AUC: 0.9502
+
+                                                                   
+
+                                                                 
+Ep 21/30 | LR: 2.7e-04 | Train Loss: 0.3591 | Val Loss: 0.3333 | Val AUC: 0.9459
+
+                                                                   
+
+                                                                 
+Ep 22/30 | LR: 2.4e-04 | Train Loss: 0.3494 | Val Loss: 0.3318 | Val AUC: 0.9358
+
+                                                                   
+
+                                                                 
+Ep 23/30 | LR: 2.1e-04 | Train Loss: 0.3524 | Val Loss: 0.2935 | Val AUC: 0.9532 🌟 Nouveau best!
+
+Ep 24/30 [Train]:  24%|██▎       | 40/170 [00:11<00:34,  3.73it/s]rc=124

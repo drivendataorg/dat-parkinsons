@@ -1,0 +1,4 @@
+[MODE CLASSIQUE] - USE_SYNTHETIC = True
+▶️ Démarrage Worker [Exp 0 | Fold 0] sur cuda:0
+✅ Worker Terminé | Best Loss: 0.2460 | AUC: 0.9630
+elapsed 5:25.20

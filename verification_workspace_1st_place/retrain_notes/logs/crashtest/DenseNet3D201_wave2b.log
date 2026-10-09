@@ -1,0 +1,100 @@
+🌱 Seed globale fixée à 42
+
+============================================================
+🚀 LANCEMENT ENSEMBLE DENSENET 3D (MONAI) 🚀
+Machine : cuda | Résolution : (128, 128, 128)
+Batch physique : 16 | Accumulation : 1 | Effectif : 16
+============================================================
+
+📥 Lecture des labels et des folds…
+
+******************** FOLD 0 ********************
+📊 Données : 80 Train | 20 Validation
+
+🔥 Mise en cache dans la RAM...
+
+
+/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py:424: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 8, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  self.check_worker_number_rationality()
+
+Ep 01/50 [Train]:   0%|          | 0/5 [00:00<?, ?it/s]/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py:430: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 8, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  self.check_worker_number_rationality()
+
+                                                       
+Traceback (most recent call last):
+  File "/home/ec2-user/sfmn1/code/1_initial_training/train_3d_densenet201.py", line 284, in <module>
+    main()
+  File "/home/ec2-user/sfmn1/code/1_initial_training/train_3d_densenet201.py", line 205, in main
+    outputs = model(inputs)
+              ^^^^^^^^^^^^^
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/monai/networks/nets/densenet.py", line 254, in forward
+    x = self.features(x)
+        ^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/monai/networks/nets/densenet.py", line 87, in forward
+    new_features = self.layers(x)
+                   ^^^^^^^^^^^^^^
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/nn/modules/batchnorm.py", line 210, in forward
+    return F.batch_norm(
+           ^^^^^^^^^^^^^
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/nn/functional.py", line 2827, in batch_norm
+    return handle_torch_function(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/overrides.py", line 1797, in handle_torch_function
+    result = torch_func_method(public_api, types, args, kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/monai/data/meta_tensor.py", line 336, in __torch_function__
+    ret = super().__torch_function__(func, types, args, kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/_tensor.py", line 1699, in __torch_function__
+    ret = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/nn/functional.py", line 2850, in batch_norm
+    return torch.batch_norm(
+           ^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 72.00 MiB. GPU 0 has a total capacity of 44.39 GiB of which 18.62 MiB is free. Including non-PyTorch memory, this process has 11.46 GiB memory in use. Process 47804 has 9.03 GiB memory in use. Process 47803 has 23.88 GiB memory in use. Of the allocated memory 10.95 GiB is allocated by PyTorch, and 22.26 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)
+rc=1

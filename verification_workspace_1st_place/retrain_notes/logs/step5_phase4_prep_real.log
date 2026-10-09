@@ -1,0 +1,31 @@
+🚀 Génération des patchs siamois (Mode : REAL)...
+⚙️ Traitement Multi-Core activé : 8 cœurs alloués. (Invert Y : False)
+
+
+✅ Terminé ! 1362 fichiers de patchs générés dans '/home/ec2-user/sfmn1/data/dataset_siamese_patches/patches_pt'.
+✅ Fichier de mapping sauvegardé : '/home/ec2-user/sfmn1/data/dataset_siamese_patches/folds_siamese.csv'.
+fold
+0    273
+1    273
+2    272
+3    272
+4    272
+Name: count, dtype: int64
+🚀 Génération des patchs globaux (Mode : REAL)...
+📂 Colonne 'fold' détectée dans le CSV.
+⚙️ Traitement Multi-Core activé : 8 cœurs alloués. (Invert Y : False)
+
+
+✅ Terminé ! 1362 fichiers de patchs générés dans '/home/ec2-user/sfmn1/data/dataset_striatums_patches/patches_pt'.
+✅ Fichier de mapping sauvegardé : '/home/ec2-user/sfmn1/data/dataset_striatums_patches/folds.csv'.
+fold
+0    273
+1    273
+2    272
+3    272
+4    272
+Name: count, dtype: int64
+
+real	56m20.633s
+user	299m34.869s
+sys	29m57.074s

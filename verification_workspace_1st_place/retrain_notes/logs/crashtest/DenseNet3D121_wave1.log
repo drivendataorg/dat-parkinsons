@@ -1,0 +1,43 @@
+🌱 Seed globale fixée à 42
+
+============================================================
+🚀 LANCEMENT ENSEMBLE DENSENET 3D (MONAI) 🚀
+Machine : cuda | Résolution : (128, 128, 128)
+Batch physique : 16 | Accumulation : 1 | Effectif : 16
+============================================================
+
+📥 Lecture des labels et des folds…
+
+******************** FOLD 0 ********************
+📊 Données : 80 Train | 20 Validation
+
+🔥 Mise en cache dans la RAM...
+
+
+/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py:424: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 8, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  self.check_worker_number_rationality()
+
+Ep 01/50 [Train]:   0%|          | 0/5 [00:00<?, ?it/s]/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/utils/data/dataloader.py:430: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 8, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  self.check_worker_number_rationality()
+
+                                                                            
+
+                                                                            
+Ep 01/50 | LR: 4.9e-04 | Train Loss: 0.6102 | Val Loss: 0.7161 🌟 Nouveau best!
+
+                                                                            
+
+                                                                            
+Ep 02/50 | LR: 4.6e-04 | Train Loss: 0.6761 | Val Loss: 0.7895
+
+                                                                            
+
+                                                                            
+Ep 03/50 | LR: 4.2e-04 | Train Loss: 0.5745 | Val Loss: 0.9434
+
+                                                                            
+
+                                                                            
+Ep 04/50 | LR: 3.6e-04 | Train Loss: 0.6289 | Val Loss: 0.7965
+
+Ep 05/50 [Train]:   0%|          | 0/5 [00:00<?, ?it/s]rc=124

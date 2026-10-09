@@ -1,0 +1,18 @@
+🚀 Génération du Dataset 2.5D (Tentative de 5 coupes max/patient)...
+⚙️ Traitement Multi-Core activé : 8 cœurs alloués.
+
+
+✅ Terminé ! 6782 images 2D générées dans '/home/ec2-user/sfmn1/data/dataset_2d/images'.
+✅ Moyenne de coupes valides conservées par patient : 4.98 / 5
+✅ Fichier de mapping : '/home/ec2-user/sfmn1/data/dataset_2d/folds_2d.csv'.
+fold
+0    1356
+1    1360
+2    1354
+3    1357
+4    1355
+Name: count, dtype: int64
+
+real	7m41.682s
+user	40m47.956s
+sys	13m8.399s

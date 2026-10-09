@@ -1,0 +1,36 @@
+
+============================================================
+🚀 ENTRAÎNEMENT ViT-B/16 FINAL | Mode: KFOLD
+============================================================
+
+
+****************** FOLD 0 ******************
+Téléchargement des poids HF...
+Traceback (most recent call last):
+  File "/home/ec2-user/sfmn1/code/1_initial_training/train_2d_vit.py", line 260, in <module>
+    main()
+  File "/home/ec2-user/sfmn1/code/1_initial_training/train_2d_vit.py", line 181, in main
+    model = MedicalViT(dropout_rate=DROPOUT, unfreeze_blocks=UNFREEZE_BLOCKS).to(DEVICE)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1383, in to
+    return self._apply(convert)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 933, in _apply
+    module._apply(fn)
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 933, in _apply
+    module._apply(fn)
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 933, in _apply
+    module._apply(fn)
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 964, in _apply
+    param_applied = fn(param)
+                    ^^^^^^^^^
+  File "/home/ec2-user/sfmn1/code/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1369, in convert
+    return t.to(
+           ^^^^^
+torch.AcceleratorError: CUDA error: out of memory
+Search for `cudaErrorMemoryAllocation' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+rc=1

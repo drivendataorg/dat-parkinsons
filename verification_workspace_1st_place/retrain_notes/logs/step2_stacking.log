@@ -1,0 +1,165 @@
+
+============================================================
+🔍 VALIDATION DES MODÈLES OOF (PHASE 1 -> PHASE 2)
+============================================================
+ ✅ ResNet2D             : Trouvé (resnet2d/)
+ ✅ Vit2D                : Trouvé (vit2d/)
+ ✅ MedicalNet18         : Trouvé (medicalnet18/)
+ ✅ MedicalNet34         : Trouvé (medicalnet34/)
+ ✅ MedicalNet50         : Trouvé (medicalnet50/)
+ ✅ MedicalNet200        : Trouvé (medicalnet200/)
+ ✅ MedicalNetResNext50  : Trouvé (medicalnet-resnext50/)
+ ✅ MedicalNetResNext101 : Trouvé (medicalnet-resnext101/)
+ ✅ MedNextB             : Trouvé (medicalnextB/)
+ ✅ DenseNet3D121        : Trouvé (densenet3d_121/)
+ ✅ DenseNet3D201        : Trouvé (densenet3d_201/)
+ ✅ DenseNetAttention    : Trouvé (densenet3d_121_attention/)
+
+🎯 Tous les 12 modèles configurés sont prêts pour le Stacking !
+
+============================================================
+🚀 STACKING — CALIBRATION + ENSEMBLE SELECTION TUNÉ (NESTED CV)
+============================================================
+📥 Importation : OOF Tabulaires
+📥 Importation : OOF ResNet2D
+📥 Importation : OOF Vit2D
+📥 Importation : OOF MedicalNet18
+📥 Importation : OOF MedicalNet34
+📥 Importation : OOF MedicalNet50
+📥 Importation : OOF MedicalNet200
+📥 Importation : OOF MedicalNetResNext50
+📥 Importation : OOF MedicalNetResNext101
+📥 Importation : OOF MedNextB
+📥 Importation : OOF DenseNet3D121
+📥 Importation : OOF DenseNet3D201
+📥 Importation : OOF DenseNetAttention
+
+============================================================
+📈 PERFORMANCES INDIVIDUELLES DES MODÈLES (OOF BRUT)
+============================================================
+ 🌳 SVM                        | AUC: 0.9073 | Log Loss: 0.3813 | ECE: 0.0196
+ 🧠 ResNet2D                   | AUC: 0.9485 | Log Loss: 0.2981 | ECE: 0.0534
+ 🧠 Vit2D                      | AUC: 0.9376 | Log Loss: 0.3159 | ECE: 0.0314
+ 🧠 MedicalNet18               | AUC: 0.9479 | Log Loss: 0.2880 | ECE: 0.0298
+ 🧠 MedicalNet34               | AUC: 0.9507 | Log Loss: 0.2767 | ECE: 0.0206
+ 🧠 MedicalNet50               | AUC: 0.9581 | Log Loss: 0.2581 | ECE: 0.0181
+ 🧠 MedicalNet200              | AUC: 0.9588 | Log Loss: 0.2560 | ECE: 0.0177
+ 🧠 MedicalNetResNext50        | AUC: 0.9606 | Log Loss: 0.2487 | ECE: 0.0247
+ 🧠 MedicalNetResNext101       | AUC: 0.9625 | Log Loss: 0.2472 | ECE: 0.0248
+ 🧠 MedNextB                   | AUC: 0.9601 | Log Loss: 0.2575 | ECE: 0.0276
+ 🤖 DenseNet3D121              | AUC: 0.9588 | Log Loss: 0.2585 | ECE: 0.0191
+ 🤖 DenseNet3D201              | AUC: 0.9542 | Log Loss: 0.2701 | ECE: 0.0214
+ 🧠 DenseNetAttention          | AUC: 0.9577 | Log Loss: 0.2611 | ECE: 0.0261
+
+============================================================
+🎯 CALIBRATION NESTED DES MODÈLES DE BASE
+============================================================
+   ⚪ (SVM)                     → Conservé : BRUT (AUCUNE AMÉLIORATION) | Log Loss : 0.3813
+ 🌳 SVM (final)                | AUC: 0.9073 | Log Loss: 0.3813 | ECE: 0.0196
+   ⚪ (ResNet2D)                → Conservé : BRUT (AUCUNE AMÉLIORATION) | Log Loss : 0.2981
+ 🧠 ResNet2D (final)           | AUC: 0.9485 | Log Loss: 0.2981 | ECE: 0.0534
+   ⚪ (Vit2D)                   → Conservé : BRUT (AUCUNE AMÉLIORATION) | Log Loss : 0.3159
+ 🧠 Vit2D (final)              | AUC: 0.9376 | Log Loss: 0.3159 | ECE: 0.0314
+   ⚪ (MedicalNet18)            → Conservé : BRUT (AUCUNE AMÉLIORATION) | Log Loss : 0.2880
+ 🧠 MedicalNet18 (final)       | AUC: 0.9479 | Log Loss: 0.2880 | ECE: 0.0298
+   ⚪ (MedicalNet34)            → Conservé : BRUT (AUCUNE AMÉLIORATION) | Log Loss : 0.2767
+ 🧠 MedicalNet34 (final)       | AUC: 0.9507 | Log Loss: 0.2767 | ECE: 0.0206
+   ⚪ (MedicalNet50)            → Conservé : BRUT (AUCUNE AMÉLIORATION) | Log Loss : 0.2581
+ 🧠 MedicalNet50 (final)       | AUC: 0.9581 | Log Loss: 0.2581 | ECE: 0.0181
+   ⚪ (MedicalNet200)           → Conservé : BRUT (AUCUNE AMÉLIORATION) | Log Loss : 0.2560
+ 🧠 MedicalNet200 (final)      | AUC: 0.9588 | Log Loss: 0.2560 | ECE: 0.0177
+   ⚪ (MedicalNetResNext50)     → Conservé : BRUT (AUCUNE AMÉLIORATION) | Log Loss : 0.2487
+ 🧠 MedicalNetResNext50 (final) | AUC: 0.9606 | Log Loss: 0.2487 | ECE: 0.0247
+   ⚪ (MedicalNetResNext101)    → Conservé : BRUT (AUCUNE AMÉLIORATION) | Log Loss : 0.2472
+ 🧠 MedicalNetResNext101 (final) | AUC: 0.9625 | Log Loss: 0.2472 | ECE: 0.0248
+   ⚪ (MedNextB)                → Conservé : BRUT (AUCUNE AMÉLIORATION) | Log Loss : 0.2575
+ 🧠 MedNextB (final)           | AUC: 0.9601 | Log Loss: 0.2575 | ECE: 0.0276
+   ⚪ (DenseNet3D121)           → Conservé : BRUT (AUCUNE AMÉLIORATION) | Log Loss : 0.2585
+ 🤖 DenseNet3D121 (final)      | AUC: 0.9588 | Log Loss: 0.2585 | ECE: 0.0191
+   ⚪ (DenseNet3D201)           → Conservé : BRUT (AUCUNE AMÉLIORATION) | Log Loss : 0.2701
+ 🤖 DenseNet3D201 (final)      | AUC: 0.9542 | Log Loss: 0.2701 | ECE: 0.0214
+   ⚪ (DenseNetAttention)       → Conservé : BRUT (AUCUNE AMÉLIORATION) | Log Loss : 0.2611
+ 🧠 DenseNetAttention (final)  | AUC: 0.9577 | Log Loss: 0.2611 | ECE: 0.0261
+
+============================================================
+🔷 MÉTA-LEARNER A — LogisticRegressionCV (pénalité ElasticNet, espace logit)
+============================================================
+ Meta A (ElasticNet LR, nested OOF) | AUC: 0.9684 | Log Loss: 0.2247 | ECE: 0.0213
+
+============================================================
+🔶 MÉTA-LEARNER B — Ensemble Selection (hyperparamètres recherchés en double nested CV)
+============================================================
+   135 tâches (5 folds x 27 configs) -- n_jobs=48
+Recherche hyperparamètres Meta B:   0%|          | 0/135 [00:00<?, ?it/s]Recherche hyperparamètres Meta B:   1%|          | 1/135 [00:19<43:08, 19.32s/it]Recherche hyperparamètres Meta B:   1%|▏         | 2/135 [00:22<21:54,  9.89s/it]Recherche hyperparamètres Meta B:   2%|▏         | 3/135 [00:26<15:53,  7.22s/it]Recherche hyperparamètres Meta B:   3%|▎         | 4/135 [00:28<11:02,  5.06s/it]Recherche hyperparamètres Meta B:   4%|▎         | 5/135 [00:29<07:52,  3.64s/it]Recherche hyperparamètres Meta B:   4%|▍         | 6/135 [00:31<06:46,  3.15s/it]Recherche hyperparamètres Meta B:   5%|▌         | 7/135 [00:31<04:42,  2.20s/it]Recherche hyperparamètres Meta B:   6%|▌         | 8/135 [00:32<03:17,  1.56s/it]Recherche hyperparamètres Meta B:   7%|▋         | 9/135 [00:34<04:03,  1.93s/it]Recherche hyperparamètres Meta B:   7%|▋         | 10/135 [00:41<06:55,  3.32s/it]Recherche hyperparamètres Meta B:  10%|▉         | 13/135 [00:41<03:07,  1.54s/it]Recherche hyperparamètres Meta B:  10%|█         | 14/135 [00:42<02:40,  1.32s/it]Recherche hyperparamètres Meta B:  11%|█         | 15/135 [00:42<02:07,  1.06s/it]Recherche hyperparamètres Meta B:  12%|█▏        | 16/135 [00:43<01:54,  1.04it/s]Recherche hyperparamètres Meta B:  13%|█▎        | 17/135 [00:44<01:53,  1.04it/s]Recherche hyperparamètres Meta B:  13%|█▎        | 18/135 [00:44<01:33,  1.26it/s]Recherche hyperparamètres Meta B:  14%|█▍        | 19/135 [00:44<01:14,  1.55it/s]Recherche hyperparamètres Meta B:  15%|█▍        | 20/135 [00:45<01:29,  1.29it/s]Recherche hyperparamètres Meta B:  16%|█▌        | 21/135 [00:46<01:28,  1.29it/s]Recherche hyperparamètres Meta B:  16%|█▋        | 22/135 [00:48<01:48,  1.04it/s]Recherche hyperparamètres Meta B:  17%|█▋        | 23/135 [00:48<01:39,  1.13it/s]Recherche hyperparamètres Meta B:  18%|█▊        | 24/135 [00:49<01:42,  1.08it/s]Recherche hyperparamètres Meta B:  19%|█▊        | 25/135 [00:52<02:21,  1.29s/it]Recherche hyperparamètres Meta B:  19%|█▉        | 26/135 [00:52<01:59,  1.10s/it]Recherche hyperparamètres Meta B:  21%|██        | 28/135 [00:57<03:06,  1.74s/it]Recherche hyperparamètres Meta B:  21%|██▏       | 29/135 [00:59<03:07,  1.77s/it]Recherche hyperparamètres Meta B:  22%|██▏       | 30/135 [01:01<03:07,  1.78s/it]Recherche hyperparamètres Meta B:  23%|██▎       | 31/135 [01:01<02:26,  1.41s/it]Recherche hyperparamètres Meta B:  24%|██▎       | 32/135 [01:03<02:43,  1.59s/it]Recherche hyperparamètres Meta B:  24%|██▍       | 33/135 [01:05<02:48,  1.65s/it]Recherche hyperparamètres Meta B:  25%|██▌       | 34/135 [01:05<02:05,  1.24s/it]Recherche hyperparamètres Meta B:  26%|██▌       | 35/135 [01:06<01:40,  1.00s/it]Recherche hyperparamètres Meta B:  27%|██▋       | 36/135 [01:07<01:40,  1.01s/it]Recherche hyperparamètres Meta B:  27%|██▋       | 37/135 [01:07<01:14,  1.31it/s]Recherche hyperparamètres Meta B:  28%|██▊       | 38/135 [01:08<01:32,  1.05it/s]Recherche hyperparamètres Meta B:  29%|██▉       | 39/135 [01:12<02:42,  1.69s/it]Recherche hyperparamètres Meta B:  30%|██▉       | 40/135 [01:13<02:12,  1.40s/it]Recherche hyperparamètres Meta B:  30%|███       | 41/135 [01:13<01:45,  1.13s/it]Recherche hyperparamètres Meta B:  31%|███       | 42/135 [01:13<01:25,  1.09it/s]Recherche hyperparamètres Meta B:  32%|███▏      | 43/135 [01:16<02:05,  1.36s/it]Recherche hyperparamètres Meta B:  33%|███▎      | 44/135 [01:16<01:34,  1.04s/it]Recherche hyperparamètres Meta B:  34%|███▍      | 46/135 [01:16<00:52,  1.71it/s]Recherche hyperparamètres Meta B:  35%|███▍      | 47/135 [01:17<00:52,  1.67it/s]Recherche hyperparamètres Meta B:  36%|███▌      | 48/135 [01:18<01:13,  1.18it/s]Recherche hyperparamètres Meta B:  36%|███▋      | 49/135 [01:21<01:46,  1.24s/it]Recherche hyperparamètres Meta B:  37%|███▋      | 50/135 [01:21<01:19,  1.07it/s]Recherche hyperparamètres Meta B:  38%|███▊      | 51/135 [01:22<01:23,  1.01it/s]Recherche hyperparamètres Meta B:  39%|███▊      | 52/135 [01:22<01:07,  1.23it/s]Recherche hyperparamètres Meta B:  39%|███▉      | 53/135 [01:25<01:44,  1.27s/it]Recherche hyperparamètres Meta B:  40%|████      | 54/135 [01:25<01:21,  1.00s/it]Recherche hyperparamètres Meta B:  41%|████      | 55/135 [01:27<01:36,  1.21s/it]Recherche hyperparamètres Meta B:  41%|████▏     | 56/135 [01:28<01:24,  1.06s/it]Recherche hyperparamètres Meta B:  42%|████▏     | 57/135 [01:28<01:04,  1.20it/s]Recherche hyperparamètres Meta B:  43%|████▎     | 58/135 [01:28<00:50,  1.53it/s]Recherche hyperparamètres Meta B:  44%|████▎     | 59/135 [01:29<00:52,  1.45it/s]Recherche hyperparamètres Meta B:  44%|████▍     | 60/135 [01:31<01:28,  1.18s/it]Recherche hyperparamètres Meta B:  45%|████▌     | 61/135 [01:35<02:30,  2.04s/it]Recherche hyperparamètres Meta B:  46%|████▌     | 62/135 [01:37<02:22,  1.96s/it]Recherche hyperparamètres Meta B:  47%|████▋     | 63/135 [01:38<01:49,  1.52s/it]Recherche hyperparamètres Meta B:  47%|████▋     | 64/135 [01:38<01:17,  1.10s/it]Recherche hyperparamètres Meta B:  48%|████▊     | 65/135 [01:40<01:50,  1.58s/it]Recherche hyperparamètres Meta B:  49%|████▉     | 66/135 [01:42<01:45,  1.53s/it]Recherche hyperparamètres Meta B:  50%|████▉     | 67/135 [01:42<01:23,  1.22s/it]Recherche hyperparamètres Meta B:  50%|█████     | 68/135 [01:45<02:00,  1.80s/it]Recherche hyperparamètres Meta B:  52%|█████▏    | 70/135 [01:46<01:06,  1.02s/it]Recherche hyperparamètres Meta B:  53%|█████▎    | 71/135 [01:47<01:05,  1.02s/it]Recherche hyperparamètres Meta B:  53%|█████▎    | 72/135 [01:52<02:17,  2.18s/it]Recherche hyperparamètres Meta B:  54%|█████▍    | 73/135 [01:53<01:45,  1.71s/it]Recherche hyperparamètres Meta B:  55%|█████▍    | 74/135 [01:53<01:21,  1.34s/it]Recherche hyperparamètres Meta B:  56%|█████▌    | 75/135 [01:55<01:32,  1.55s/it]Recherche hyperparamètres Meta B:  56%|█████▋    | 76/135 [01:56<01:22,  1.39s/it]Recherche hyperparamètres Meta B:  57%|█████▋    | 77/135 [02:00<02:13,  2.30s/it]Recherche hyperparamètres Meta B:  58%|█████▊    | 78/135 [02:01<01:47,  1.88s/it]Recherche hyperparamètres Meta B:  59%|█████▊    | 79/135 [02:02<01:21,  1.45s/it]Recherche hyperparamètres Meta B:  59%|█████▉    | 80/135 [02:04<01:27,  1.59s/it]Recherche hyperparamètres Meta B:  60%|██████    | 81/135 [02:05<01:24,  1.56s/it]Recherche hyperparamètres Meta B:  61%|██████    | 82/135 [02:06<01:10,  1.33s/it]Recherche hyperparamètres Meta B:  61%|██████▏   | 83/135 [02:09<01:27,  1.69s/it]Recherche hyperparamètres Meta B:  62%|██████▏   | 84/135 [02:10<01:20,  1.58s/it]Recherche hyperparamètres Meta B:  63%|██████▎   | 85/135 [02:10<01:01,  1.24s/it]Recherche hyperparamètres Meta B:  64%|██████▎   | 86/135 [02:12<01:05,  1.34s/it]Recherche hyperparamètres Meta B:  64%|██████▍   | 87/135 [02:13<00:59,  1.24s/it]Recherche hyperparamètres Meta B:  65%|██████▌   | 88/135 [02:13<00:42,  1.11it/s]Recherche hyperparamètres Meta B:  66%|██████▌   | 89/135 [02:14<00:47,  1.03s/it]Recherche hyperparamètres Meta B:  67%|██████▋   | 90/135 [02:15<00:37,  1.20it/s]Recherche hyperparamètres Meta B:  67%|██████▋   | 91/135 [02:15<00:28,  1.56it/s]Recherche hyperparamètres Meta B:  69%|██████▉   | 93/135 [02:17<00:35,  1.17it/s]Recherche hyperparamètres Meta B:  70%|██████▉   | 94/135 [02:19<00:43,  1.06s/it]Recherche hyperparamètres Meta B:  71%|███████   | 96/135 [02:21<00:38,  1.01it/s]Recherche hyperparamètres Meta B:  72%|███████▏  | 97/135 [02:22<00:37,  1.01it/s]Recherche hyperparamètres Meta B:  73%|███████▎  | 98/135 [02:23<00:39,  1.06s/it]Recherche hyperparamètres Meta B:  73%|███████▎  | 99/135 [02:23<00:29,  1.21it/s]Recherche hyperparamètres Meta B:  74%|███████▍  | 100/135 [02:25<00:39,  1.12s/it]Recherche hyperparamètres Meta B:  75%|███████▍  | 101/135 [02:27<00:44,  1.30s/it]Recherche hyperparamètres Meta B:  76%|███████▌  | 102/135 [02:27<00:32,  1.00it/s]Recherche hyperparamètres Meta B:  76%|███████▋  | 103/135 [02:28<00:30,  1.04it/s]Recherche hyperparamètres Meta B:  77%|███████▋  | 104/135 [02:29<00:32,  1.06s/it]Recherche hyperparamètres Meta B:  78%|███████▊  | 105/135 [02:29<00:23,  1.27it/s]Recherche hyperparamètres Meta B:  79%|███████▊  | 106/135 [02:30<00:24,  1.20it/s]Recherche hyperparamètres Meta B:  79%|███████▉  | 107/135 [02:31<00:26,  1.04it/s]Recherche hyperparamètres Meta B:  80%|████████  | 108/135 [02:33<00:28,  1.06s/it]Recherche hyperparamètres Meta B:  81%|████████  | 109/135 [02:33<00:21,  1.22it/s]Recherche hyperparamètres Meta B:  81%|████████▏ | 110/135 [02:34<00:21,  1.19it/s]Recherche hyperparamètres Meta B:  82%|████████▏ | 111/135 [02:34<00:17,  1.39it/s]Recherche hyperparamètres Meta B:  83%|████████▎ | 112/135 [02:34<00:12,  1.85it/s]Recherche hyperparamètres Meta B:  84%|████████▎ | 113/135 [02:35<00:10,  2.05it/s]Recherche hyperparamètres Meta B:  85%|████████▌ | 115/135 [02:35<00:06,  2.87it/s]Recherche hyperparamètres Meta B:  86%|████████▌ | 116/135 [02:36<00:07,  2.41it/s]Recherche hyperparamètres Meta B:  87%|████████▋ | 118/135 [02:36<00:04,  3.54it/s]Recherche hyperparamètres Meta B:  88%|████████▊ | 119/135 [02:37<00:07,  2.23it/s]Recherche hyperparamètres Meta B:  89%|████████▉ | 120/135 [02:37<00:06,  2.19it/s]Recherche hyperparamètres Meta B:  90%|████████▉ | 121/135 [02:40<00:13,  1.06it/s]Recherche hyperparamètres Meta B:  90%|█████████ | 122/135 [02:40<00:09,  1.38it/s]Recherche hyperparamètres Meta B:  91%|█████████ | 123/135 [02:41<00:09,  1.33it/s]Recherche hyperparamètres Meta B:  92%|█████████▏| 124/135 [02:41<00:08,  1.35it/s]Recherche hyperparamètres Meta B:  93%|█████████▎| 126/135 [02:42<00:04,  2.02it/s]Recherche hyperparamètres Meta B:  94%|█████████▍| 127/135 [02:42<00:03,  2.49it/s]Recherche hyperparamètres Meta B:  95%|█████████▍| 128/135 [02:42<00:02,  3.07it/s]Recherche hyperparamètres Meta B:  96%|█████████▌| 129/135 [02:43<00:02,  2.19it/s]Recherche hyperparamètres Meta B:  96%|█████████▋| 130/135 [02:43<00:02,  1.99it/s]Recherche hyperparamètres Meta B:  97%|█████████▋| 131/135 [02:45<00:02,  1.34it/s]Recherche hyperparamètres Meta B:  98%|█████████▊| 132/135 [02:46<00:02,  1.13it/s]Recherche hyperparamètres Meta B:  99%|█████████▉| 134/135 [02:48<00:00,  1.02it/s]Recherche hyperparamètres Meta B: 100%|██████████| 135/135 [02:49<00:00,  1.12it/s]Recherche hyperparamètres Meta B: 100%|██████████| 135/135 [02:49<00:00,  1.25s/it]
+   Fold 0 -> {'bag_frac': 0.9, 'max_models': 15, 'model_frac': 1.0} (Log Loss interne: 0.2264)
+   Fold 1 -> {'bag_frac': 0.9, 'max_models': 25, 'model_frac': 1.0} (Log Loss interne: 0.2312)
+   Fold 2 -> {'bag_frac': 0.5, 'max_models': 8, 'model_frac': 1.0} (Log Loss interne: 0.2106)
+   Fold 3 -> {'bag_frac': 0.7, 'max_models': 15, 'model_frac': 0.8} (Log Loss interne: 0.2240)
+   Fold 4 -> {'bag_frac': 0.5, 'max_models': 15, 'model_frac': 0.8} (Log Loss interne: 0.2190)
+ Meta B (Ensemble Selection tuné, nested OOF) | AUC: 0.9689 | Log Loss: 0.2233 | ECE: 0.0231
+
+   🏭 Recherche des hyperparamètres de production (sur toutes les données)...
+   -> Retenus : {'bag_frac': 0.5, 'max_models': 8, 'model_frac': 0.6} (Log Loss interne: 0.2219)
+
+============================================================
+🏆 RECHERCHE DU POIDS DE BLEND ALPHA (Meta A vs Meta B)
+============================================================
+   alpha optimal : 0.20  (1.0 = tout Meta A, 0.0 = tout Meta B)
+   Log Loss au meilleur alpha : 0.2231
+
+ Meta A seul                  | AUC: 0.9684 | Log Loss: 0.2247 | ECE: 0.0213
+ Meta B seul                  | AUC: 0.9689 | Log Loss: 0.2233 | ECE: 0.0231
+ Combiné A+B (alpha=0.20)     | AUC: 0.9689 | Log Loss: 0.2231 | ECE: 0.0190
+
+============================================================
+🎯 CALIBRATION NESTED DU STACKING FINAL
+============================================================
+   ✅ Calibration cross-validée (BETA) améliore le score : 0.2231 → 0.2231
+ Stacking final (retenu)      | AUC: 0.9687 | Log Loss: 0.2231 | ECE: 0.0183
+
+============================================================
+⚖️ POIDS ACCORDÉS PAR LES MÉTA-LEARNERS
+============================================================
+
+🔷 Meta A (coefficients ElasticNet, 0 = exclu) :
+   🧠 ResNet2D             : +0.2016
+   🧠 MedicalNetResNext50  : +0.1868
+   🧠 MedicalNetResNext101 : +0.1789
+   🧠 MedicalNet200        : +0.1552
+   🧠 Vit2D                : +0.1404
+   🧠 MedNextB             : +0.1392
+   🧠 MedicalNet50         : +0.0593
+   🧠 DenseNetAttention    : +0.0576
+   🌳 SVM                  : +0.0463
+   🤖 DenseNet3D201        : +0.0014
+
+🔶 Meta B (fréquence de sélection normalisée, hyperparamètres: {'bag_frac': 0.5, 'max_models': 8, 'model_frac': 0.6}) :
+   🧠 MedicalNetResNext101 : 0.1552
+   🧠 MedicalNetResNext50  : 0.1422
+   🧠 MedNextB             : 0.1164
+   🧠 MedicalNet200        : 0.1121
+   🧠 ResNet2D             : 0.1078
+   🧠 DenseNetAttention    : 0.0991
+   🧠 Vit2D                : 0.0862
+   🧠 MedicalNet50         : 0.0733
+   🤖 DenseNet3D121        : 0.0474
+   🤖 DenseNet3D201        : 0.0216
+   🌳 SVM                  : 0.0172
+   🧠 MedicalNet18         : 0.0129
+   🧠 MedicalNet34         : 0.0086
+
+🗑️ Modèles JAMAIS retenus par l'arbitre (Poids ~0) (0) :
+   - Aucun ! Tous les modèles contribuent.
+
+✅ Fichier de prédictions complet sauvegardé : 2_stacking/results/final_hybrid_oof.csv
+🌟 SCORE FINAL (nested OOF) — AUC: 0.9687 | Log Loss: 0.2231 | ECE: 0.0183
+✅ Méta-modèle sauvegardé : 2_stacking/results/meta_model_stacking.pkl
+
+============================================================
+📊 GENERATION DES GRAPHIQUES
+============================================================
+✅ Visuels générés dans : 2_stacking/results
+
+real	4m6.738s
+user	26m29.426s
+sys	0m4.876s
