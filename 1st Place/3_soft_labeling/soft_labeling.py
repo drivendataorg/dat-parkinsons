@@ -53,6 +53,15 @@ class DummyInference:
     def predict(self, x):
         return 0.5
 
+# Modèles dont le chargement a échoué (remplacés par DummyInference) / models that failed to load
+ECHECS_CHARGEMENT = []
+
+def avertir_echecs_chargement():
+    if ECHECS_CHARGEMENT:
+        noms = sorted(ECHECS_CHARGEMENT)
+        logger.warning(f"⚠️ ATTENTION : {len(noms)} modèle(s) n'ont pas pu être chargés et sont remplacés par une constante 0.5 : {noms}. Les soft labels seront faux. Voir la/les trace(s) d'erreur ci-dessus.")
+        logger.warning(f"⚠️ WARNING: {len(noms)} model(s) failed to load and were replaced by a constant 0.5: {noms}. Soft labels will be wrong. See the traceback(s) above.")
+
 # ==========================================
 # FONCTION WORKER POUR LE MULTITHREADING
 # ==========================================
@@ -91,6 +100,7 @@ def _charger_un_modele(clean_name, model_info, phase1_dir):
     except Exception as e:
         # logger.exception va imprimer toute la trace rouge (stack trace)
         logger.exception(f"⚠️ Erreur détaillée pour {clean_name} :")
+        ECHECS_CHARGEMENT.append(clean_name)
         return clean_name, DummyInference(clean_name)
 
 # ==========================================
@@ -142,6 +152,7 @@ def init_pipeline():
             modeles_actifs[nom_modele] = instance_modele
 
     logger.info("✅ Pipeline prêt ! Tous les modèles sont en VRAM.")
+    avertir_echecs_chargement()
     return arbitre, modeles_actifs
 
 
@@ -255,6 +266,7 @@ def main() -> None:
     
     logger.success(f"🎉 Terminé ! Soft labels sauvegardés dans : {OUTPUT_CSV_PATH.resolve()}")
     logger.info(f"📊 Aperçu des 3 premières lignes :\n{df_out.head(3)}")
+    avertir_echecs_chargement()
 
 if __name__ == '__main__':
     try:

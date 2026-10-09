@@ -88,7 +88,7 @@ It is possible to skip the train steps of each phase by downloading our model we
 A utilitary script is available to simplify this process :
 
 ```bash
-python scripts/download_weights
+python scripts/download_weights.py
 ```
 
 It will make a copy of your current results folder if they exists, and place each weight in its corresponding folder.
@@ -118,12 +118,12 @@ The pipeline uses sequential checkpointing. You can start the execution from any
 
 | Target Action | Command to Run | Comment |
 |---|---|---|
-| **Run Everything** | `python run_pipeline.py` | Prepare data and train every model from scratch|
-| **Start from Phase 1 Training** | `python run_pipeline.py --start-at phase1_train` | |
-| **Start from Stacking (Phase 2)** | `python run_pipeline.py --start-at phase2` | You need to have trained weights in phase1 results directory |
-| **Start from Soft Labeling (Phase 3)** | `python run_pipeline.py --start-at phase3` | |
-| **Start from Siamese Prep (Phase 4)** | `python run_pipeline.py --start-at phase4_prep` | You can start from here with the soft label .csv and synthetic data, no other weights needed|
-| **Run Siamese Training Only** | `python run_pipeline.py --start-at phase4_train` | |
+| **Run Everything** | `python 5_pipeline/run_pipeline.py` | Prepare data and train every model from scratch|
+| **Start from Phase 1 Training** | `python 5_pipeline/run_pipeline.py --start-at phase1_train` | |
+| **Start from Stacking (Phase 2)** | `python 5_pipeline/run_pipeline.py --start-at phase2` | You need to have trained weights in phase1 results directory |
+| **Start from Soft Labeling (Phase 3)** | `python 5_pipeline/run_pipeline.py --start-at phase3` | Needs `2_stacking/results/meta_model_stacking.pkl`, which is not in the downloaded weights: run Phase 2 first |
+| **Start from Siamese Prep (Phase 4)** | `python 5_pipeline/run_pipeline.py --start-at phase4_prep` | You can start from here with the soft label .csv and synthetic data, no other weights needed|
+| **Run Siamese Training Only** | `python 5_pipeline/run_pipeline.py --start-at phase4_train` | |
 
 #### Alternative 1: Soft labeling with only 3 models
 

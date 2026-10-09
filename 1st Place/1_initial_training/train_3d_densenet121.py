@@ -191,7 +191,7 @@ def main():
         scheduler = optim.lr_scheduler.CosineAnnealingWarmRestarts(optimizer, T_0=10, T_mult=2, eta_min=ETA_MIN)
 
         best_val_loss   = float('inf')
-        model_save_path = os.path.join(OUTPUT_DIR, f"densenet3d_fold_{fold}.pth")
+        model_save_path = os.path.join(OUTPUT_DIR, f"densenet3d_121_fold_{fold}.pth")
         best_fold_preds = []
 
         for epoch in range(EPOCHS):

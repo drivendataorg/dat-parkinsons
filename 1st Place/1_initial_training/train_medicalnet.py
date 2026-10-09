@@ -48,6 +48,8 @@ cfg = OmegaConf.merge(OmegaConf.load("0_configs/default.yaml"))
 DATA_DIR    = cfg.paths.niftis
 LABELS_PATH = cfg.paths.train_labels
 OUTPUT_DIR  = Path(cfg.paths.phase1_out) / RUN_NAME
+# Préfixe des poids / nom OOF depuis le YAML (ex: medicalnextB -> mednext_b, oof_mednextB.csv), sinon RUN_NAME
+MODEL_CFG   = next((m for m in cfg.models.values() if m.get("folder") == RUN_NAME), {})
 CACHE_DIR   = Path(cfg.paths.root_dir) / "vol_cache"
 SEED = 0
 
@@ -302,7 +304,7 @@ def main():
         scheduler = optim.lr_scheduler.CosineAnnealingWarmRestarts(optimizer, T_0=10, T_mult=2, eta_min=ETA_MIN)
         
         best_val_loss   = float('inf')
-        model_save_path = os.path.join(OUTPUT_DIR, f"{RUN_NAME}_fold_{fold}.pth")
+        model_save_path = os.path.join(OUTPUT_DIR, f"{MODEL_CFG.get('prefix', RUN_NAME)}_fold_{fold}.pth")
 
         for epoch in range(EPOCHS):
             # ── Train ──
@@ -401,7 +403,7 @@ def main():
     })
     
     # Nom du fichier OOF aligné avec ton YAML (ex: oof_medicalnet18.csv)
-    oof_csv_path = OUTPUT_DIR / f"oof_{RUN_NAME}.csv"
+    oof_csv_path = OUTPUT_DIR / MODEL_CFG.get("oof_file", f"oof_{RUN_NAME}.csv")
     df_oof.to_csv(oof_csv_path, index=False)
     print(f"✅ Fichier OOF sauvegardé pour le Stacking : {oof_csv_path}")
 
