@@ -1,7 +1,0 @@
-[MODE SANS SYNTHÉTIQUE] - USE_SYNTHETIC = False
-▶️ Démarrage Worker [Exp 0 | Fold 0] sur cuda:0
-✅ Worker Terminé | Best Loss: 0.2585 | AUC: 0.9611
-
-real	2m39.065s
-user	4m50.238s
-sys	0m53.109s

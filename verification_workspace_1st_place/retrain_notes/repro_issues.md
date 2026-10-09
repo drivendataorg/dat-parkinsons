@@ -9,7 +9,7 @@
   - **Failure is silent.** `stacking.py` prints ❌ and drops a model whose OOF is missing. `soft_labeling.py` catches the load error and substitutes `DummyInference` (constant 0.5), so the run "succeeds" with wrong soft labels.
   - The README's 3-model alternative (ResNet2D, MedicalNet50, SVM) is unaffected; those names line up.
   - Fix: make the save names match `default.yaml` (or vice versa), and make phase 3 fail hard on a missing model.
-  - **Confirmed by running (step 4b crash test):** `train_3d_densenet121.py` and `train_3d_densenet201.py` both wrote `densenet3d_fold_0.pth`, and MedNeXtB wrote `medicalnextB_fold_0.pth`.
+  - **Confirmed by running crash test:** `train_3d_densenet121.py` and `train_3d_densenet201.py` both wrote `densenet3d_fold_0.pth`, and MedNeXtB wrote `medicalnextB_fold_0.pth`.
 
 ## Doc inaccuracies / gaps
 
