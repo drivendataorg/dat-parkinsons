@@ -1,3 +1,0 @@
-loaded 50 modules on cuda (['torch.float32']) | anchor=striatal (ellipse) | 524 scans | 6 preprocessing workers
-hedged scans: 0
-wrote /home/ec2-user/sfmn3/roster_test.csv (524 rows)

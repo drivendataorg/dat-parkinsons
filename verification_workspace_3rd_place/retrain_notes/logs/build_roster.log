@@ -1,3 +1,0 @@
-ROSTER submission.zip: 10 members, 50 fold-models
-ROSTER calibration a=0.78 b=-0.147955 | OOF ll 0.2067 AUC 0.9759 | opt_temp 1.031 (near 1.04 = same operating point as the scored packages)
-ROSTER wrote /home/ec2-user/sfmn3/roster/submission.zip (2.84 GB)
