@@ -3,3 +3,7 @@
 
 # Competition submissions
 references/submissions/comp_subs/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
