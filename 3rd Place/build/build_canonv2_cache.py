@@ -25,6 +25,7 @@ Two things here are load-bearing and have each cost a retraction in this project
 writing anything: the gate this repo was assembled under.
 """
 import argparse, os, sys, numpy as np, torch, nibabel as nib
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from datscan import paths as P
 from scipy import ndimage as ndi
 

@@ -16,11 +16,11 @@ Export gates, each of which exists because its absence once shipped a broken pac
 16 scans the tracer never saw. Run it before shipping anything.
 """
 import argparse, json, os, sys, numpy as np, torch
-from datscan import paths as P
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, ROOT); sys.path.insert(0, os.path.join(ROOT, "inference"))
+from datscan import paths as P                           # noqa: E402
 import canonize as CZ                                    # noqa: E402
 from datscan.config import Recipe                        # noqa: E402
 from datscan.model import DatNet                         # noqa: E402
@@ -29,6 +29,7 @@ torch.set_grad_enabled(False)
 torch._C._jit_set_profiling_executor(False); torch._C._jit_set_profiling_mode(False)
 torch._C._jit_override_can_fuse_on_cpu(False); torch._C._jit_override_can_fuse_on_gpu(False)
 torch._C._jit_set_texpr_fuser_enabled(False)
+torch.backends.cudnn.allow_tf32 = False; torch.backends.cuda.matmul.allow_tf32 = False   # TF32 GPUs fail the 1e-4 gate
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--runs", required=True, help="directory holding <member>__best_fold<k>.pt and <member>.manifest.json")

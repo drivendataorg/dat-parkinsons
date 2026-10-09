@@ -8,8 +8,9 @@ fold-model on 16 different scans, in f32 on CPU and on GPU, and reports the wors
   usage: python verify_traces.py [assets_dir] [members_dir]
 """
 import sys, os, glob, json, numpy as np, torch
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, ROOT); sys.path.insert(0, os.path.join(ROOT, "inference"))
 from datscan import paths as P
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import canonize as CZ
 from datscan.config import Recipe
 from datscan.model import DatNet
