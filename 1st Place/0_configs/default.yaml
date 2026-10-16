@@ -1,0 +1,118 @@
+# ==================================
+# 0_configs/paths.yaml
+# ==================================
+
+paths:
+  root_dir: "<your_data_dir>"
+
+  niftis: "${paths.root_dir}/niftis"
+  train_labels: "${paths.root_dir}/train_labels_with_folds.csv"
+
+  dataset_2d: "${paths.root_dir}/dataset_2d"
+  images_2d: "${paths.dataset_2d}/images"
+  folds_2d_csv: "${paths.dataset_2d}/folds_2d.csv"
+  synthetic_niftis: "${paths.root_dir}/external/PET_GENERATED"
+  
+  dataset_siamese: "${paths.root_dir}/dataset_siamese_patches"
+  dataset_striatums: "${paths.root_dir}/dataset_striatums_patches"
+  dataset_synthetic_siamese: "${paths.root_dir}/dataset_synthetic_siamese_patches"
+  dataset_synthetic_striatums: "${paths.root_dir}/dataset_synthetic_striatums_patches"
+  
+  phase1_out: "1_initial_training/results"
+  phase2_out: "2_stacking/results"
+  phase3_out: "3_soft_labeling/results"
+  phase4_out: "4_siamese_training/results"
+
+# ==================================
+# RÉFÉRENTIEL DES MODÈLES (Utilisé par Phase 1 et Phase 2)
+# ==================================
+models:
+  ResNet2D:
+    folder: "resnet2d"
+    oof_file: "oof_resnet2d.csv"
+    prob_col: "prob_2d"
+    
+  Vit2D:
+    folder: "vit2d"
+    oof_file: "oof_vit2d.csv"
+    prob_col: "prob_2d"
+    
+  MedicalNet18:
+    folder: "medicalnet18"
+    oof_file: "oof_medicalnet18.csv"
+    prob_col: "prob"
+    
+  MedicalNet34:
+    folder: "medicalnet34"
+    oof_file: "oof_medicalnet34.csv"
+    prob_col: "prob"
+    
+  MedicalNet50:
+    folder: "medicalnet50"
+    oof_file: "oof_medicalnet50.csv"
+    prob_col: "prob"
+    
+  MedicalNet200:
+    folder: "medicalnet200"
+    oof_file: "oof_medicalnet200.csv"
+    prob_col: "prob"
+    
+  MedicalNetResNext50:
+    folder: "medicalnet-resnext50"
+    oof_file: "oof_medicalnet-resnext50.csv"
+    prob_col: "prob"
+    prefix: "medicalnet-resnext50"
+
+  MedicalNetResNext101:
+    folder: "medicalnet-resnext101"
+    oof_file: "oof_medicalnet-resnext101.csv"
+    prob_col: "prob"
+    prefix: "medicalnet-resnext101"
+
+  MedNextB:
+    folder: "medicalnextB"
+    oof_file: "oof_mednextB.csv"
+    prob_col: "prob"
+    prefix: "mednext_b"
+
+  DenseNet3D121:
+    folder: "densenet3d_121"
+    oof_file: "oof_densenet3d.csv"
+    prob_col: "prob_3d"
+    prefix: "densenet3d_121"
+
+  DenseNet3D201:
+    folder: "densenet3d_201"
+    oof_file: "oof_densenet3d_201.csv"
+    prob_col: "prob_3d"
+    prefix: "densenet3d_201"
+
+  DenseNetAttention:
+    folder: "densenet3d_121_attention"
+    oof_file: "oof_densenet3d_attn.csv"
+    prob_col: "prob_3d"
+    prefix: "densenet3d_attn"
+
+  SVM:
+    folder: "tabular_models"
+    model_file: "SVM.pkl"
+    type: "sklearn"
+
+
+stacking:
+  tabular_oof: "${paths.phase1_out}/${models.SVM.folder}/tabular_oof.csv"
+  # tabular_oof: null to deactivate SVM
+  
+  active_models:
+    - ResNet2D
+    - Vit2D
+    - MedicalNet18
+    - MedicalNet34
+    - MedicalNet50
+    - MedicalNet200
+    - MedicalNetResNext50
+    - MedicalNetResNext101
+    - MedNextB
+    - DenseNet3D121
+    - DenseNet3D201
+    - DenseNetAttention

@@ -1,0 +1,7 @@
+  lin   ll 0.2322  auc 0.9650
+  lin4  ll 0.2378  auc 0.9634
+  gbm   ll 0.2690  auc 0.9542
+  mlp   ll 0.2371  auc 0.9622
+[final3] wrote oof_feat3.csv
+[final3] exported: L1 kept 48/235 rich features, 40/94 narrow
+[03_linear] train_final3 wall time 16 s

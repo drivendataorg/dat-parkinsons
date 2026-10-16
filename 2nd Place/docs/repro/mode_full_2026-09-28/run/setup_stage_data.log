@@ -1,0 +1,5 @@
+[00_stage] zip sha256 matches the competition download
+[00_stage] labels sha256 matches the competition download
+[00_stage] scans: 1362  label rows: 1362  labelled uids without a scan: 0
+[00_stage] labels.csv sha256 1660731b5d51b1f9...
+[00_stage] OK

@@ -1,0 +1,9 @@
+[driver 2026-09-27 23:41:36 EDT] start: pid 43367 ppid 1 root <run> rehearsal_epochs=none verify_data=<original-project>/data-verify
+[driver 2026-09-27 23:42:16 EDT] train_all.sh MODE=full begins
+[driver 2026-09-28 05:52:15 EDT] train_all exit 0 after 22199 s
+[driver 2026-09-28 06:00:45 EDT] verify rebuilt exit 0 after 503 s
+[driver 2026-09-28 06:09:11 EDT] verify scored exit 0 after 497 s
+[driver 2026-09-28 06:17:16 EDT] template rebuild exit 0 after 485 s
+[driver 2026-09-28 06:27:25 EDT] analysis exit 0
+/dev/disk3s5   460Gi   403Gi    31Gi    93%    3.7M  328M    1%   /System/Volumes/Data
+[driver 2026-09-28 06:27:25 EDT] ALL DONE

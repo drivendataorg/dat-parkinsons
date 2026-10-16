@@ -1,0 +1,42 @@
+[project]
+name = "dat-park"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "loguru>=0.7.3",
+    "matplotlib",
+    "monai",
+    "nibabel",
+    "numpy",
+    "opencv-python>=5.0.0.93",
+    "pandas",
+    "pyradiomics @ git+https://github.com/AIM-Harvard/pyradiomics.git",
+    "scikit-image",
+    "scikit-learn",
+    "seaborn",
+    "simpleitk",
+    "timm>=1.0.28",
+    "torch==2.12.1+cu129",
+    "torchio==1.2.1",
+    "torchvision==0.27.1+cu129",
+    "tqdm",
+    "umap-learn>=0.5.12",
+    "xgboost",
+    "omegaconf",
+    "torchinfo",
+    "ptwt",
+]
+
+[[tool.uv.index]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu129"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]

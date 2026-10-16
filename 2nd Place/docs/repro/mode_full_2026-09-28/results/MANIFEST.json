@@ -1,0 +1,562 @@
+{
+  "zip_bytes": 1090115337,
+  "sha256": "a37e884b74677c9397a17b0464506d73b03bf2d3c2b1825481875afa4854d3d7",
+  "entries": 82,
+  "shallow_container_import_passed": true,
+  "static_checks": {
+    "target": "submission.zip",
+    "entries": 82,
+    "testzip_ok": true,
+    "main_py_at_root": true,
+    "npz_entries": 0,
+    "logger_fstring_lines": {
+      "inference_main.py": [],
+      "main.py": []
+    },
+    "shallow_import": {
+      "scale_features.py": "ok",
+      "mixture_features.py": "ok"
+    },
+    "py_files_compiled": 18,
+    "py_files_failed": [],
+    "failures": [],
+    "passed": true
+  },
+  "check_against": {
+    "reference": "submission.zip",
+    "entries": 82,
+    "reference_entries": 82,
+    "crc_and_size_equal": 52,
+    "crc_or_size_mismatch": [
+      "assets/e2db3f2_fold0.ts.pt",
+      "assets/e2db3f2_fold1.ts.pt",
+      "assets/e2db3f2_fold2.ts.pt",
+      "assets/e2db3f2_fold3.ts.pt",
+      "assets/e2db3f2_fold4.ts.pt",
+      "assets/e2db3f2_full0.ts.pt",
+      "assets/e2dmipf22_fold0.ts.pt",
+      "assets/e2dmipf22_fold1.ts.pt",
+      "assets/e2dmipf22_fold2.ts.pt",
+      "assets/e2dmipf22_fold3.ts.pt",
+      "assets/e2dmipf22_fold4.ts.pt",
+      "assets/e2dmipf22_full0.ts.pt",
+      "assets/e2dmipf2_fold0.ts.pt",
+      "assets/e2dmipf2_fold1.ts.pt",
+      "assets/e2dmipf2_fold2.ts.pt",
+      "assets/e2dmipf2_fold3.ts.pt",
+      "assets/e2dmipf2_fold4.ts.pt",
+      "assets/e2dmipf2_full0.ts.pt",
+      "assets/mil48a_fold0.pt",
+      "assets/mil48a_fold1.pt",
+      "assets/mil48a_fold2.pt",
+      "assets/mil48a_fold3.pt",
+      "assets/mil48a_fold4.pt",
+      "assets/mil48b_fold0.pt",
+      "assets/mil48b_fold1.pt",
+      "assets/mil48b_fold2.pt",
+      "assets/mil48b_fold3.pt",
+      "assets/mil48b_fold4.pt",
+      "assets/tabular_log.pkl.xz",
+      "assets/tabular_raw.pkl.xz"
+    ],
+    "compress_type_mismatch": [],
+    "only_in_package": [],
+    "only_in_reference": [],
+    "same_entry_order": true,
+    "identical_contents": false
+  },
+  "files": [
+    {
+      "name": "CANDIDATE.json",
+      "bytes": 3731,
+      "crc32": "400b6e57",
+      "sha256": "3b17690df1b6dd60452ebafbc5450859a2db3a1edd561b256ab3a96a745e6afb"
+    },
+    {
+      "name": "TABICL_MODEL_CARD.md",
+      "bytes": 1170,
+      "crc32": "d52895a1",
+      "sha256": "af2a149343cb949f10cca93212d61d67c5be9f7305fbb9c3d7ca1412267a09fd"
+    },
+    {
+      "name": "assets/e2db3f2_fold0.ts.pt",
+      "bytes": 42701806,
+      "crc32": "eaa88e56",
+      "sha256": "b93b01aba50dca5286bcb2c6f81131b9a671d62131d6a394563c045f78f441fe"
+    },
+    {
+      "name": "assets/e2db3f2_fold1.ts.pt",
+      "bytes": 42701808,
+      "crc32": "88d6dc51",
+      "sha256": "0685eb64f467e9902711de9da7df1cc90db7ea3c1e6a6a69d05db3d2f3ad7554"
+    },
+    {
+      "name": "assets/e2db3f2_fold2.ts.pt",
+      "bytes": 42701808,
+      "crc32": "027847d7",
+      "sha256": "b7860df524f454259ff10f5f93a4af826ce22cd2812f721809b2711ebaafa938"
+    },
+    {
+      "name": "assets/e2db3f2_fold3.ts.pt",
+      "bytes": 42701808,
+      "crc32": "229c79d2",
+      "sha256": "9cd54ee25c5e72ae00148ad20e47718074fb0851bb6abc8796ee5f7be6b74e07"
+    },
+    {
+      "name": "assets/e2db3f2_fold4.ts.pt",
+      "bytes": 42701808,
+      "crc32": "647f175d",
+      "sha256": "8f3516402a20784bd446ecc7ea5ba29fa0b272f49425ad73eb0b017b4389d2bf"
+    },
+    {
+      "name": "assets/e2db3f2_full0.ts.pt",
+      "bytes": 42701808,
+      "crc32": "cedc3d7f",
+      "sha256": "7110f988c718c50e519944fe37f749d04fe1138771678daf3720856bdcb5c657"
+    },
+    {
+      "name": "assets/e2dmipf22_fold0.ts.pt",
+      "bytes": 16006124,
+      "crc32": "e34a309c",
+      "sha256": "f6548aa532bf51b62b44b30a97bf38b2046eea4bf091b22b7bbfb9d2cb8fd091"
+    },
+    {
+      "name": "assets/e2dmipf22_fold1.ts.pt",
+      "bytes": 16006124,
+      "crc32": "2cc46545",
+      "sha256": "3d7a015069a68e378384a984f257750d6124ebd168c72bf49b210ad951f6ed28"
+    },
+    {
+      "name": "assets/e2dmipf22_fold2.ts.pt",
+      "bytes": 16006126,
+      "crc32": "ad9d638f",
+      "sha256": "e6d9cd401a08777e68755f228c4e61854172219d6f207f7c401805e61f049840"
+    },
+    {
+      "name": "assets/e2dmipf22_fold3.ts.pt",
+      "bytes": 16006126,
+      "crc32": "37f0561d",
+      "sha256": "52586c4ad72f68d28a6cff0b9e7a389b51f5a67838f3750c0223e111b9929212"
+    },
+    {
+      "name": "assets/e2dmipf22_fold4.ts.pt",
+      "bytes": 16006126,
+      "crc32": "c8124916",
+      "sha256": "7588ce44a141ac34ff51361418fba7fa7ff4aa9fb4f59a42bb5a417fedc3b215"
+    },
+    {
+      "name": "assets/e2dmipf22_full0.ts.pt",
+      "bytes": 16006126,
+      "crc32": "1c8ef252",
+      "sha256": "e24f27c70354c5f7dad39c9aa77a4a3f278f875f1e59a063ae87dfaee6a29713"
+    },
+    {
+      "name": "assets/e2dmipf2_fold0.ts.pt",
+      "bytes": 16005889,
+      "crc32": "c16b3c43",
+      "sha256": "3a209a8584454589e85a3f223ea9c10dcb57e78c50b2fabd234984610c64a1f2"
+    },
+    {
+      "name": "assets/e2dmipf2_fold1.ts.pt",
+      "bytes": 16005889,
+      "crc32": "0818adec",
+      "sha256": "0f2c649b85d8754f6832ca8f8dd0f00288a13b4226b380d02e454d24ec0378d1"
+    },
+    {
+      "name": "assets/e2dmipf2_fold2.ts.pt",
+      "bytes": 16005891,
+      "crc32": "72d3b5f3",
+      "sha256": "d2ca1af9704eeb27c3ecee2727f23d860bc5c92f1fb00c051b8cbf4aebb5aa8d"
+    },
+    {
+      "name": "assets/e2dmipf2_fold3.ts.pt",
+      "bytes": 16005891,
+      "crc32": "f8fe2c3c",
+      "sha256": "be8435f9f3c04ecb598e99ed24f8447fe6fba665bc757b16b2f26ccf273d87d2"
+    },
+    {
+      "name": "assets/e2dmipf2_fold4.ts.pt",
+      "bytes": 16005891,
+      "crc32": "300e9396",
+      "sha256": "160df3fc87155232e2de574b5f5a055c8a7a7ddca52097c789c2398a6e4b6a89"
+    },
+    {
+      "name": "assets/e2dmipf2_full0.ts.pt",
+      "bytes": 16005891,
+      "crc32": "88b8eaa5",
+      "sha256": "ad047ead91632d95fd939c3a8388e7164ddf68d2a768588b6a8134d11e3d1517"
+    },
+    {
+      "name": "assets/inference_config.json",
+      "bytes": 33685,
+      "crc32": "1255d5b4",
+      "sha256": "6c1a8bf6e3092ef988f904fabba3452adc08f1c87d42780f1198910886fdb4b8"
+    },
+    {
+      "name": "assets/linear_lin.json",
+      "bytes": 28463,
+      "crc32": "665aa972",
+      "sha256": "63d3799a19be6d1ac314a9247fb08f5ca124834af805dcf1d408a6362df03622"
+    },
+    {
+      "name": "assets/linear_lin4.json",
+      "bytes": 11699,
+      "crc32": "f0e61499",
+      "sha256": "e2d55d2f38d9e9afc6cb4a680d1456bc68c1dc2883850793fa62406e6b2d036b"
+    },
+    {
+      "name": "assets/m31000_fold0.pt",
+      "bytes": 3597645,
+      "crc32": "9dae20de",
+      "sha256": "115b2c3352c0ddf4dbf4f68183c301c08136ab9a78f64c2134b4dfe21dc38bbe"
+    },
+    {
+      "name": "assets/m31000_fold1.pt",
+      "bytes": 3597645,
+      "crc32": "55fda807",
+      "sha256": "8807f4fe3cf100fa6a82b4be6f49859c3e8c488e8d779a5cd54c08b7820572f1"
+    },
+    {
+      "name": "assets/m31000_fold2.pt",
+      "bytes": 3597645,
+      "crc32": "1bd60f5d",
+      "sha256": "18e62e94d3bbdf6a2d03338f12c536588d4c12d266f85adb073a71ac6b92d4e9"
+    },
+    {
+      "name": "assets/m31000_fold3.pt",
+      "bytes": 3597645,
+      "crc32": "016984d0",
+      "sha256": "4862883557f5cc98db57f5c48c263da6b6bdbe827e316b282f7e083a4abef4c4"
+    },
+    {
+      "name": "assets/m31000_fold4.pt",
+      "bytes": 3597645,
+      "crc32": "3b8574cd",
+      "sha256": "3c368ae2dba6f336e08731d9f82bea0c3399377c98d77510a9d7b508b3e56eba"
+    },
+    {
+      "name": "assets/m33000_fold0.pt",
+      "bytes": 3597645,
+      "crc32": "65a9b7b2",
+      "sha256": "9c93fbbbcfe0f972f3b8f4285a07d129b8eed26d1181c6087f1f69b72f0b80fa"
+    },
+    {
+      "name": "assets/m33000_fold1.pt",
+      "bytes": 3597645,
+      "crc32": "3018aa9d",
+      "sha256": "2b761363b1bb839922a7d70ac318a52fd7a9ba6a12169a34e645e3c07e6ec61e"
+    },
+    {
+      "name": "assets/m33000_fold2.pt",
+      "bytes": 3597645,
+      "crc32": "bab0f112",
+      "sha256": "20a05fa66038d15bfbc786850b272dd6b5ffba3e7b1c61eca367f87395c770e0"
+    },
+    {
+      "name": "assets/m33000_fold3.pt",
+      "bytes": 3597645,
+      "crc32": "51e65ddd",
+      "sha256": "ac5737bb4bf17f4235b87c8844fdaf6e608cb81c7b0f85b6277f1a820547b491"
+    },
+    {
+      "name": "assets/m33000_fold4.pt",
+      "bytes": 3597645,
+      "crc32": "e32e8742",
+      "sha256": "3e5523ef628efd1e0e561b8e8886dc6c6f2d89668bb57647743629011c61e582"
+    },
+    {
+      "name": "assets/m35000_fold0.pt",
+      "bytes": 3597645,
+      "crc32": "41e5e6c5",
+      "sha256": "72ea9039b078a2b30490987dc8eab3dc7c90f9541966dadb4b85ff3ed10ea5a9"
+    },
+    {
+      "name": "assets/m35000_fold1.pt",
+      "bytes": 3597645,
+      "crc32": "87b5d189",
+      "sha256": "b36a3674c94447a6bba5b8651555f73befbf7fcdb3cf8110a5998f1bec466aa7"
+    },
+    {
+      "name": "assets/m35000_fold2.pt",
+      "bytes": 3597645,
+      "crc32": "fb011f74",
+      "sha256": "7686727ec34ea93dec4be83a53f3b2a76e1dc1af7103f5cc385a5009a6e117a9"
+    },
+    {
+      "name": "assets/m35000_fold3.pt",
+      "bytes": 3597645,
+      "crc32": "e744a28c",
+      "sha256": "3b68dc90a1529ea421c93ce319d6a1e92bf1f7c63ddc7544bed104e055301778"
+    },
+    {
+      "name": "assets/m35000_fold4.pt",
+      "bytes": 3597645,
+      "crc32": "1219f239",
+      "sha256": "d6b712bdaa7eb21e12fdb9b93fe746dd787267733371c8449b85929fcd615097"
+    },
+    {
+      "name": "assets/m37000_fold0.pt",
+      "bytes": 3597645,
+      "crc32": "ca543af5",
+      "sha256": "142e173fafa13c2dc06658b1e65c259be8227ea7e257bac086f08580ea0a1186"
+    },
+    {
+      "name": "assets/m37000_fold1.pt",
+      "bytes": 3597645,
+      "crc32": "64f91fdd",
+      "sha256": "2b82af5649d3269b63bcff1fde4d9cf79b889af6a91b88ed5a0f32fc36ef7b7e"
+    },
+    {
+      "name": "assets/m37000_fold2.pt",
+      "bytes": 3597645,
+      "crc32": "11139d03",
+      "sha256": "868e100cc579d1b28e0bbebacc5477e6d159d95060ccf736e867be37b3557e83"
+    },
+    {
+      "name": "assets/m37000_fold3.pt",
+      "bytes": 3597645,
+      "crc32": "79428afb",
+      "sha256": "b3acbfb365896ec6dda3a7d703cf5fc340d825cae255c73d983ffd8b9c5bf84d"
+    },
+    {
+      "name": "assets/m37000_fold4.pt",
+      "bytes": 3597645,
+      "crc32": "9edb6b6b",
+      "sha256": "b2145fe520b9427a23fe950f69a23db540046747b060f06ac6c65f38c3a568cb"
+    },
+    {
+      "name": "assets/mf21000_full0.pt",
+      "bytes": 3597689,
+      "crc32": "60b65319",
+      "sha256": "faee71df643009f39d6fb71fa69b410cd35c3a8ca2fb4041038118e6e95bcc66"
+    },
+    {
+      "name": "assets/mf23000_full0.pt",
+      "bytes": 3597689,
+      "crc32": "325c5a2d",
+      "sha256": "6c091b7e3b0a79c42ab37dfc6586ffce885c8513d6774c9ddd6a19c4f04836c2"
+    },
+    {
+      "name": "assets/mf25000_full0.pt",
+      "bytes": 3597689,
+      "crc32": "eec9bed8",
+      "sha256": "8c2651e76c8e6a8daae0f57d22b0d946b7125e0fda75f56f40bb360b2452a3ce"
+    },
+    {
+      "name": "assets/mf27000_full0.pt",
+      "bytes": 3597689,
+      "crc32": "ea4edb52",
+      "sha256": "e4f5480073ba89da42dd84b0d2209110972e07179e83c89ac14820d0e27f6b12"
+    },
+    {
+      "name": "assets/mil48a_fold0.pt",
+      "bytes": 3597645,
+      "crc32": "55837091",
+      "sha256": "d9607cbbcc43e930247cecd202301470b4d785f005f127476fa63204121a341f"
+    },
+    {
+      "name": "assets/mil48a_fold1.pt",
+      "bytes": 3597645,
+      "crc32": "050a9b22",
+      "sha256": "bb4689020af5534769564793dfc8605fd5539b9c90b056d2c048ec32011803c4"
+    },
+    {
+      "name": "assets/mil48a_fold2.pt",
+      "bytes": 3597645,
+      "crc32": "4ef7ad55",
+      "sha256": "e4c2c66459af849b94d1da6a4103925a68e5362780366689e3b41f0118acd487"
+    },
+    {
+      "name": "assets/mil48a_fold3.pt",
+      "bytes": 3597645,
+      "crc32": "c5cc4767",
+      "sha256": "33db208e7c29a5c9487ed96d35d0cac2e005c660470f470733bf04751d7f7971"
+    },
+    {
+      "name": "assets/mil48a_fold4.pt",
+      "bytes": 3597645,
+      "crc32": "aab0341f",
+      "sha256": "a03ad63e08ac0d5e2e013b1126b6be1a994a75e0f07bfefc929ca9c2453d959d"
+    },
+    {
+      "name": "assets/mil48b_fold0.pt",
+      "bytes": 3597645,
+      "crc32": "abddde2f",
+      "sha256": "8ab8fa5b6b8f18ef5c4dfb3805751cfd6da1e135d56c62a0a23012cbbba3be91"
+    },
+    {
+      "name": "assets/mil48b_fold1.pt",
+      "bytes": 3597645,
+      "crc32": "44df2b7b",
+      "sha256": "8c3d383cac05820db35c3ddc31a0ed7c99a840ba2e7eda0861da395942e7fb55"
+    },
+    {
+      "name": "assets/mil48b_fold2.pt",
+      "bytes": 3597645,
+      "crc32": "0fa0189a",
+      "sha256": "0f24ac9b9da67967c248731bd46b574ea59f1ca4b9ab72c9348b1ab8abf147ed"
+    },
+    {
+      "name": "assets/mil48b_fold3.pt",
+      "bytes": 3597645,
+      "crc32": "b6c29946",
+      "sha256": "f400de35d48e2d2a78365f3bb2d5d2391d0cde6ebcb4411cffefb03703c46786"
+    },
+    {
+      "name": "assets/mil48b_fold4.pt",
+      "bytes": 3597645,
+      "crc32": "832b3aa2",
+      "sha256": "74f1389d477885bd633b8435d5592cd71c71121ef14e0f7e70479b2d9bcb0399"
+    },
+    {
+      "name": "assets/tabicl-classifier-v2-20260212.ckpt",
+      "bytes": 110368038,
+      "crc32": "740d09f1",
+      "sha256": "bdc7dbd5e4ff21f8f0456fcf90c6b7cdf72dbea960f2d05b19bec19f9b3d4ed0"
+    },
+    {
+      "name": "assets/tabular_log.pkl.xz",
+      "bytes": 226749680,
+      "crc32": "51e7e48a",
+      "sha256": "5e9ae3442ed1742c0a04a7ff1ff5bb071fefae313075eef2749e142ec767418d"
+    },
+    {
+      "name": "assets/tabular_raw.pkl.xz",
+      "bytes": 229984736,
+      "crc32": "cffef008",
+      "sha256": "1a0e793babc8489b5287e2916e902ec9c70853c351c56b5f46953b6ef6febb9b"
+    },
+    {
+      "name": "assets/tabular_recipe.json",
+      "bytes": 211539,
+      "crc32": "5aefd16d",
+      "sha256": "211f53509c4979f0df863955ff4749a6ccf13f2bfb5b80ddf076df3290be6a8b"
+    },
+    {
+      "name": "assets/template_v6.npy",
+      "bytes": 442496,
+      "crc32": "a6578475",
+      "sha256": "4d3629d5a06aadd8d638e2333f37169de5a460524be3314944553b23fb2b0672"
+    },
+    {
+      "name": "cnn2d.py",
+      "bytes": 17864,
+      "crc32": "df20831b",
+      "sha256": "c08fd0438f3cd601d94f3961cd9f436b106359c1d8862d8c38977743fbb1c7d2"
+    },
+    {
+      "name": "cnn3.py",
+      "bytes": 26252,
+      "crc32": "c5390b10",
+      "sha256": "8c5a15448c0b392b54159105011b8e4fb685b6fe65a39b1d9d6e5c8419cb470b"
+    },
+    {
+      "name": "cnn4.py",
+      "bytes": 16881,
+      "crc32": "908e922e",
+      "sha256": "092e4dc58d0a7ed39b47bf1069b5ebe97d5756c6c9f24e3747e7c2a6ca4ed8c2"
+    },
+    {
+      "name": "features13.py",
+      "bytes": 4127,
+      "crc32": "d02e1560",
+      "sha256": "ffa6608fc37a2f2055e133241af03283b50d08ca1c6d5eb5a61b0913be045146"
+    },
+    {
+      "name": "features4.py",
+      "bytes": 8230,
+      "crc32": "c44a5edc",
+      "sha256": "869a77cf76279314f95f463cc6d4249a4fbcf84d8c3b19e554d6ba61d5dc4e60"
+    },
+    {
+      "name": "features5.py",
+      "bytes": 2983,
+      "crc32": "fe266c07",
+      "sha256": "e091b2f42352ff9c242ee558dfd0290623a1be61e848bccdd675d46a67e97c12"
+    },
+    {
+      "name": "features6.py",
+      "bytes": 5806,
+      "crc32": "ccf2d3fa",
+      "sha256": "a814e3992e09decb71497ded7dd9fd5c76ad9d7589e02417232a38c77d9502de"
+    },
+    {
+      "name": "inference_main.py",
+      "bytes": 23753,
+      "crc32": "f3aa092c",
+      "sha256": "a52edb26132becf56385750cc9389984bfd73e8f9660b831af72af49aa2bdee6"
+    },
+    {
+      "name": "main.py",
+      "bytes": 816,
+      "crc32": "afc95918",
+      "sha256": "7e0332fbd8c41b115eb4d3fd7f6a2c2f7bb75e8815224031a756c35dfff264b5"
+    },
+    {
+      "name": "mixture_features.py",
+      "bytes": 3040,
+      "crc32": "fb923ace",
+      "sha256": "6ebc165475171e241e705c07b9568933752de2039f776e95745b32339f441e11"
+    },
+    {
+      "name": "nets3.py",
+      "bytes": 15863,
+      "crc32": "4e291b5e",
+      "sha256": "78d06a04b162bf2ee2dab028e2a91ca12c1272e531f75af0f6781f5f21739d72"
+    },
+    {
+      "name": "portable3.py",
+      "bytes": 5044,
+      "crc32": "95f4d474",
+      "sha256": "52d4bcb04eb76e9e6c1c2dc3fd2c505067c8c0c4c3d6699bc7462a25ec5220b1"
+    },
+    {
+      "name": "preprocessing3.py",
+      "bytes": 39996,
+      "crc32": "42a7556e",
+      "sha256": "287ac71d61e3c63ccff9a7bbfd871b0cc97037393a1e05b3c4c5877f471cbc80"
+    },
+    {
+      "name": "regfit.py",
+      "bytes": 5345,
+      "crc32": "ea02e328",
+      "sha256": "d13ea78dc47ce6989a7e7ca435859c5d1a47a236afe020a3b4f7ea40a13a35e8"
+    },
+    {
+      "name": "register3.py",
+      "bytes": 11938,
+      "crc32": "78625d50",
+      "sha256": "93b51e53e38b441f9ceb49feaef7b23c89a7800367fee4d668fa24646acc033d"
+    },
+    {
+      "name": "roigeom.py",
+      "bytes": 6248,
+      "crc32": "458da35f",
+      "sha256": "e5f344f95cd1d286dd5694ef61e915950f572d9e79e2f4806eab2e93e3fbfce6"
+    },
+    {
+      "name": "scale_features.py",
+      "bytes": 3349,
+      "crc32": "b685919d",
+      "sha256": "6e6bd8290aad09bd24494b50f733363c6db1bdc68d16814e955dabae5e40b2c0"
+    },
+    {
+      "name": "tabicl_lib.zip",
+      "bytes": 286222,
+      "crc32": "79769763",
+      "sha256": "6a57bb28590e713feed119795868a10b0cfadaac02cee2e093ca2d5b175f9874"
+    },
+    {
+      "name": "tabicl_licenses/LICENSE",
+      "bytes": 12996,
+      "crc32": "bc025795",
+      "sha256": "c959a1db8bc4b2f41c315a9b077c822372a4a84e1a83636bdb962715aaae6874"
+    },
+    {
+      "name": "tabular_adapter.py",
+      "bytes": 3940,
+      "crc32": "3ce18d75",
+      "sha256": "518d344ee1dd7d305e08edce2b3d7e560119a2079a7f40536dbf6ff79c7e21eb"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+[m35000] dev=mps arch=mil x(1362, 1, 48, 48, 48) key=aligned size=48 epochs=20
+[m35000] fold 0: ll 0.2702 auc 0.9524  (336s)
+[m35000] fold 1: ll 0.2450 auc 0.9625  (672s)
+[m35000] fold 2: ll 0.2527 auc 0.9642  (1008s)
+[m35000] fold 3: ll 0.3060 auc 0.9441  (1344s)
+[m35000] fold 4: ll 0.2490 auc 0.9631  (1679s)
+
+[m35000] OOF logloss 0.2646 auroc 0.9568 (1679s)

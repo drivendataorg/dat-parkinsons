@@ -1,0 +1,53 @@
+########## 09_package start Mon Sep 28 05:51:52 EDT 2026 ##########
+[package] inference/: 22 files copied verbatim (60 files under inference/assets ignored)
+[package] build3 inference_config.json sha256 dcf4e4747c5ed0305cc6411aa1f2d6011bb55a8b091c94eb72bbf9fa923e3707
+[package] submission_src/assets: 55 image/linear/template assets
+[package] inference_config.json: feature_order 235 -> 479 (tabular list 479 names; equals final order: True); tabicl=true
+[package] tabular: recipe + ['tabular_log.pkl.xz', 'tabular_raw.pkl.xz'] + tabicl-classifier-v2-20260212.ckpt (sha256 matches the shipped checkpoint)
+[package] wrote submission.zip (20 s)
+[package] static gates: PASSED
+[package] check-against {
+  "reference": "submission.zip",
+  "entries": 82,
+  "reference_entries": 82,
+  "crc_and_size_equal": 52,
+  "crc_or_size_mismatch": [
+    "assets/e2db3f2_fold0.ts.pt",
+    "assets/e2db3f2_fold1.ts.pt",
+    "assets/e2db3f2_fold2.ts.pt",
+    "assets/e2db3f2_fold3.ts.pt",
+    "assets/e2db3f2_fold4.ts.pt",
+    "assets/e2db3f2_full0.ts.pt",
+    "assets/e2dmipf22_fold0.ts.pt",
+    "assets/e2dmipf22_fold1.ts.pt",
+    "assets/e2dmipf22_fold2.ts.pt",
+    "assets/e2dmipf22_fold3.ts.pt",
+    "assets/e2dmipf22_fold4.ts.pt",
+    "assets/e2dmipf22_full0.ts.pt",
+    "assets/e2dmipf2_fold0.ts.pt",
+    "assets/e2dmipf2_fold1.ts.pt",
+    "assets/e2dmipf2_fold2.ts.pt",
+    "assets/e2dmipf2_fold3.ts.pt",
+    "assets/e2dmipf2_fold4.ts.pt",
+    "assets/e2dmipf2_full0.ts.pt",
+    "assets/mil48a_fold0.pt",
+    "assets/mil48a_fold1.pt",
+    "assets/mil48a_fold2.pt",
+    "assets/mil48a_fold3.pt",
+    "assets/mil48a_fold4.pt",
+    "assets/mil48b_fold0.pt",
+    "assets/mil48b_fold1.pt",
+    "assets/mil48b_fold2.pt",
+    "assets/mil48b_fold3.pt",
+    "assets/mil48b_fold4.pt",
+    "assets/tabular_log.pkl.xz",
+    "assets/tabular_raw.pkl.xz"
+  ],
+  "compress_type_mismatch": [],
+  "only_in_package": [],
+  "only_in_reference": [],
+  "same_entry_order": true,
+  "identical_contents": false
+}
+{"zip_bytes": 1090115337, "sha256": "a37e884b74677c9397a17b0464506d73b03bf2d3c2b1825481875afa4854d3d7", "entries": 82, "shallow_container_import_passed": true}
+[package] done in 23 s

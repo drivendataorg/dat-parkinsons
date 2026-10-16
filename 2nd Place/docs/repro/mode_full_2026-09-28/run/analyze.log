@@ -1,0 +1,19 @@
+[PASS] run: train_all.sh MODE=full exited 0 after 22199 s (6.17 h)
+[PASS] stages 01-03: 13 of 13 files byte-identical to the documented hashes
+[PASS] stage 04: crops_v3_b.npz sha256 equal to the 25 Sep rebuild
+[PASS] stage 04: crops_v3_f2.npz sha256 equal to the 25 Sep rebuild
+[PASS] side tables: 6 of 6 byte-identical to the original tree (qc_v3_b.csv, qc_v3_f2.csv, eda_real_geometry.csv, hdr_fingerprint.csv, scale_f2.csv, mixture_shape.csv)
+[PASS] stage 07 recipe: tabular_recipe.json and context.npz byte-identical to the scored recipe and the original context
+[PASS] stage 07 order: feature_order_v17.json equals the scored configuration's 479 names
+[PASS] checkpoints 3d: 34 of 34 retrained checkpoints tensor-identical to the originals (34 expected); largest tensor difference 0
+[PASS] checkpoints 2d: 18 of 18 retrained checkpoints tensor-identical to the originals (18 expected); largest tensor difference 0
+[PASS] per-run OOF: 9 five-fold runs; OOF log loss change vs original: mil48a +0.0000, mil48b +0.0000, m31000 +0.0000, m33000 +0.0000, m35000 +0.0000, m37000 +0.0000, e2dmipf2 +0.0000, e2dmipf22 +0.0000, e2db3f2 +0.0000
+[PASS] stacker: cross-fit log loss 0.20695 at T=1 (original 0.20695, +0.00000), 0.21671 at T=1.4 (original 0.21671); AUROC 0.97228; scale 0.531211 (orig 0.531211), intercept 0.184314 (orig 0.184314); ensemble file byte-identical
+[PASS] package: 82 entries, static gates passed; 52 of 82 entries identical to the scored archive, 30 differ (CRC32 or size)
+[PASS] parity: rebuilt vs scored package on 150 scans: max abs dp 0, mean 0, 0 above 1e-3, 0 above 1e-2; log loss 0.09811 vs 0.09811, AUROC 0.99873 vs 0.99873
+[PASS] environment: scored package in this inference environment vs the 14 Sep predictions: max abs dp 0
+[PASS] template: template_v6 rebuilt from this run's crops_v3_b.npz: sha256 identical to the scored asset, 0 of 110592 voxels differ
+[PASS] TorchScript: 18 retrained .ts.pt vs released: max abs logit diff 0 on 256 cached images
+[PASS] TabICL contexts: re-frozen contexts vs released, 3 outputs on the 1,362 training rows: max abs dp 0
+[INFO] logs: 58 log/text files scanned, 0 contain scan ids (never copy these into the release): []
+[analyze] wrote run_logs/retrain_report.json and retrain_report.md

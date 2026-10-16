@@ -1,0 +1,6 @@
+<repo>/.venv-train/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py:782: UserWarning: A worker stopped while some jobs were given to the executor. This can be caused by a too short worker timeout or by a memory leak.
+  warnings.warn(
+[regfeat32] preprocessed 1362 at float32 (0 failed) in 365s
+[regfeat32] registered | mean ncc 0.7889 | rejected 2 | 118s
+[regfeat32] wrote features_v13_m2.csv (240 feats) and features_v4_m2.csv (98 feats)
+[02_features] make_regfeat32 wall time 493 s

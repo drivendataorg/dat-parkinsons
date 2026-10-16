@@ -1,0 +1,33 @@
+Runtime dependency: torch=2.12.1
+Runtime dependency: numpy=2.2.6
+Runtime dependency: scipy=1.17.1
+Runtime dependency: scikit-learn=1.8.0
+Runtime dependency: pandas=3.0.3
+Runtime dependency: psutil=7.2.2
+Runtime dependency: huggingface-hub=0.36.2
+2026-09-28 06:00:55.492 | INFO     | inference_main:main:230 - Reading submission format
+2026-09-28 06:00:55.494 | INFO     | inference_main:main:233 - Loading image and linear models
+2026-09-28 06:00:57.107 | INFO     | inference_main:main:235 - Image and linear models loaded
+2026-09-28 06:00:57.109 | INFO     | inference_main:main:240 - Loading frozen tabular models
+2026-09-28 06:01:12.685 | INFO     | inference_main:main:242 - Frozen tabular models loaded
+2026-09-28 06:01:12.685 | INFO     | inference_main:main:255 - Models loaded; running inference
+2026-09-28 06:01:12.781 | INFO     | inference_main:main:305 - Registration template loaded
+2026-09-28 06:09:11.046 | SUCCESS  | inference_main:main:481 - Wrote submission.csv
+      496.52 real       927.18 user        59.54 sys
+          5188993024  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+             1025384  page reclaims
+                  96  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                6367  voluntary context switches
+            19304876  involuntary context switches
+      12620452005525  instructions retired
+       3471710788226  cycles elapsed
+          5038314200  peak memory footprint

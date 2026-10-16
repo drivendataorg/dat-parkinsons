@@ -1,0 +1,27 @@
+# Inference environment for the v17 submission (Python 3.12).
+# Pinned to the versions the DrivenData runtime printed during the competition
+# (platform log of submission 322341: torch 2.12.1+cu129, numpy 2.2.6, scipy 1.15.3,
+# scikit-learn 1.8.0, pandas 3.0.3, psutil 7.2.2, huggingface-hub 0.36.2); the rest
+# follow the runtime repository's uv.lock. The frozen TabICL contexts are pickled
+# scikit-learn/numpy objects, so keep numpy 2.2.x and scikit-learn 1.8.x.
+#
+# CPU / Apple Silicon:  pip install -r requirements-inference.txt
+# Linux + NVIDIA GPU:   pip install torch==2.12.1 --index-url https://download.pytorch.org/whl/cu129
+#                       pip install -r requirements-inference.txt
+# TabICL 2.2.0 itself is vendored in inference/tabicl_lib.zip and needs no install.
+# requirements-inference.lock.txt pins every package, transitive ones included, as in
+# the verified macOS arm64 environment.
+torch==2.12.1
+numpy==2.2.6
+scipy==1.15.3; platform_machine == "x86_64"   # the platform (Linux x86_64) ran 1.15.3
+scipy==1.17.1; platform_machine != "x86_64"   # runtime uv.lock pin for other machines; 1.15.3 arm64 wheels fail to load on recent macOS
+scikit-learn==1.8.0
+pandas==3.0.3
+nibabel==5.4.2
+loguru==0.7.3
+einops==0.8.2
+tqdm==4.67.3
+psutil==7.2.2
+huggingface-hub==0.36.2
+joblib==1.5.3
+threadpoolctl==3.6.0

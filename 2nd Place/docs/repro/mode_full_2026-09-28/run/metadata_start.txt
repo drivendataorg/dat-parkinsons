@@ -1,0 +1,15 @@
+start 2026-09-27 23:41:36 EDT
+ProductName:		macOS
+ProductVersion:		27.0
+BuildVersion:		26A428
+Darwin <host> 27.0.0 Darwin Kernel Version 27.0.0: Tue Aug 11 21:06:24 PDT 2026; root:xnu-13432.1.9~1/RELEASE_ARM64_T6030 arm64
+Apple M3 Pro
+19327352832
+11
+Now drawing from 'AC Power'
+ -InternalBattery-0 (id=23003235)	80%; AC attached; not charging present: true
+/dev/disk3s5   460Gi   397Gi    37Gi    92%    3.7M  386M    1%   /System/Volumes/Data
+907c5486014d9f7aacb73b225f64df33195c1f7972be6bd3c6cfd69728184eec  <release>/dat-park-navattack-code.zip
+88b5611e25170d88c2fbf21b62443dbc67b722c519b5a0391a60aab62bbec7fd  <original-project>/submissions/v17/submission.zip
+train env: python 3.12.11 torch 2.13.0 mps True numpy 2.5.1 scipy 1.18.0 scikit-learn 1.9.0 pandas 3.0.5 timm 1.0.28
+inference env: python 3.12.11 torch 2.12.1 numpy 2.2.6 scipy 1.17.1 scikit-learn 1.8.0 pandas 3.0.3

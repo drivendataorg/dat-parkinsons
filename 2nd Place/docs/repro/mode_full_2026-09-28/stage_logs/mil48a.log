@@ -1,0 +1,8 @@
+[mil48a] dev=mps arch=mil x(1362, 1, 48, 48, 48) key=aligned size=48 epochs=20
+[mil48a] fold 0: ll 0.2544 auc 0.9576  (337s)
+[mil48a] fold 1: ll 0.2471 auc 0.9611  (674s)
+[mil48a] fold 2: ll 0.2477 auc 0.9641  (1010s)
+[mil48a] fold 3: ll 0.3137 auc 0.9395  (1346s)
+[mil48a] fold 4: ll 0.2586 auc 0.9597  (1682s)
+
+[mil48a] OOF logloss 0.2643 auroc 0.9564 (1682s)

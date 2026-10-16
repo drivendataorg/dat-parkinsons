@@ -1,0 +1,47 @@
+wrote 1362 rows, 47 cols
+         descrip:   1 unique -> {'': 1362}
+         db_name:   1 unique -> {'': 1362}
+        aux_file:   1 unique -> {'': 1362}
+     intent_name:   1 unique -> {'': 1362}
+      qform_code:   1 unique -> {1.0: 1362}
+      sform_code:   1 unique -> {1.0: 1362}
+     intent_code:   1 unique -> {0.0: 1362}
+      slice_code:   1 unique -> {0.0: 1362}
+      xyzt_units:   1 unique -> {10.0: 1362}
+        dim_info:   1 unique -> {0.0: 1362}
+         cal_max:   1 unique -> {0.0: 1362}
+         cal_min:   1 unique -> {0.0: 1362}
+       scl_slope:   0 unique -> {}
+       scl_inter:   0 unique -> {}
+         toffset:   1 unique -> {0.0: 1362}
+  slice_duration:   1 unique -> {0.0: 1362}
+     slice_start:   1 unique -> {0.0: 1362}
+       slice_end:   1 unique -> {0.0: 1362}
+      vox_offset:   1 unique -> {0.0: 1362}
+      sizeof_hdr:   1 unique -> {348.0: 1362}
+        datatype:   2 unique -> {512.0: 1346, 4.0: 16}
+          bitpix:   1 unique -> {16.0: 1362}
+           glmax:   1 unique -> {0.0: 1362}
+           glmin:   1 unique -> {0.0: 1362}
+       qoffset_x: 562 unique
+       qoffset_y: 754 unique
+       qoffset_z: 1040 unique
+         pixdim0:   1 unique -> {1.0: 1362}
+         pixdim1:  50 unique
+         pixdim2:  50 unique
+         pixdim3:  12 unique -> {2.4600000381469727: 528, 3.9000000953674316: 254, 2.299999952316284: 207, 2.397599935531616: 143, 3.8953697681427: 71, 3.0: 67, 1.5: 32, 3.299999952316284: 26}
+         pixdim4:   1 unique -> {0.0: 1362}
+         pixdim5:   1 unique -> {0.0: 1362}
+         pixdim6:   1 unique -> {0.0: 1362}
+         pixdim7:   1 unique -> {0.0: 1362}
+           quat0: 321 unique
+           quat1: 322 unique
+           quat2: 321 unique
+          aff_t0: 562 unique
+          aff_t1: 754 unique
+          aff_t2: 1040 unique
+        aff_diag: 363 unique
+ aff_offdiag_max: 294 unique
+             dim:  66 unique
+           magic:   1 unique -> {'n+1': 1362}
+      extensions:   1 unique -> {0: 1362}

@@ -1,0 +1,7 @@
+fold0: max |eager - traced| logit = 2.26e-05  (res 224, views mip3)
+fold1: max |eager - traced| logit = 1.60e-05  (res 224, views mip3)
+fold2: max |eager - traced| logit = 3.60e-05  (res 224, views mip3)
+fold3: max |eager - traced| logit = 2.29e-05  (res 224, views mip3)
+fold4: max |eager - traced| logit = 3.41e-05  (res 224, views mip3)
+full0: max |eager - traced| logit = 1.69e-05  (res 224, views mip3)
+wrote outputs/e2db3f2_meta.json

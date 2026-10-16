@@ -1,0 +1,14 @@
+[e2dmipf2] dev=mps backbone=efficientnet_b0.ra_in1k X(1362, 3, 48, 48) res=192 epochs=30 lr=0.0001 aug=1.0
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[e2dmipf2] fold 0: ll 0.2773 auc 0.9516  (300s)
+[e2dmipf2] readout skipped: FileNotFoundError(2, 'No such file or directory')
+[e2dmipf2] fold 1: ll 0.2918 auc 0.9469  (597s)
+[e2dmipf2] readout skipped: FileNotFoundError(2, 'No such file or directory')
+[e2dmipf2] fold 2: ll 0.3012 auc 0.9535  (896s)
+[e2dmipf2] readout skipped: FileNotFoundError(2, 'No such file or directory')
+[e2dmipf2] fold 3: ll 0.2817 auc 0.9563  (1194s)
+[e2dmipf2] readout skipped: FileNotFoundError(2, 'No such file or directory')
+[e2dmipf2] fold 4: ll 0.2809 auc 0.9562  (1491s)
+[e2dmipf2] readout skipped: FileNotFoundError(2, 'No such file or directory')
+
+[e2dmipf2] OOF logloss 0.2866 auroc 0.9517 (1491s)
